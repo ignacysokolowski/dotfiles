@@ -1,0 +1,10 @@
+set tabstop=2 shiftwidth=2 expandtab autoindent nowrap nu
+filetype plugin indent on
+filetype plugin on
+colorscheme molokai
+map <F3> :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.o$']
+
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+set completeopt=preview,longest,menu
+set completefunc=pythoncomplete#Complete

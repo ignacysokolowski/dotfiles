@@ -1,0 +1,24 @@
+[
+	{ "keys": ["g", "t"], "command": "next_view", "context":
+		[
+			{ "key": "setting.command_mode", "operand": true },
+			{ "key": "setting.is_widget", "operand": false }
+		]
+	},
+	{ "keys": ["g", "T"], "command": "prev_view", "context":
+		[
+			{ "key": "setting.command_mode", "operand": true },
+			{ "key": "setting.is_widget", "operand": false }
+		]
+	},
+	{ "keys": ["ctrl+t", "ctrl+t"], "command": "goto_python_definition", "context":
+	    [
+	        { "key": "selector", "operator": "equal", "operand": "source.python" }
+	    ]
+	},
+	{ "keys": ["ctrl+t", "ctrl+i"], "command": "python_auto_import", "context":
+	    [
+	        { "key": "selector", "operator": "equal", "operand": "source.python" }
+	    ]
+	}
+]
