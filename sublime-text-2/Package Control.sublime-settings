@@ -1,11 +1,12 @@
 {
-	"auto_upgrade_last_run": 1331462067,
+	"auto_upgrade_last_run": 1331577253,
 	"installed_packages":
 	[
 		"Block Nav",
 		"INI",
 		"Jinja2",
 		"Package Control",
+		"SublimeBlockCursor",
 		"SublimeCodeIntel",
 		"SublimeLinter",
 		"SublimeRope",
