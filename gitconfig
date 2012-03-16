@@ -1,3 +1,27 @@
 [user]
 	name = Ignacy Sokołowski
 	email = ignacy.sokolowski@gmail.com
+
+[color]
+  ui = auto
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[alias]
+  st = status
+  ci = commit
+  co = checkout
+  br = branch
+  slog = log --pretty=oneline --abbrev-commit
+  glog = log --graph --decorate --pretty=oneline --abbrev-commit
+  gloga = log --graph --decorate --pretty=oneline --abbrev-commit --all
+
