@@ -23,13 +23,13 @@ in_virtualenv() {
   if [ x$VIRTUAL_ENV != x ]; then
     folder=`dirname "${VIRTUAL_ENV}"`
     ENV_NAME=`basename "$folder"`
-    echo -n $'\033[37m(\033[31m'
+    echo -n $'('
     echo -n $ENV_NAME
-    echo -n $'\033[37m)\033[00m'
+    echo -n $')'
   fi
 }
 
-PS1='\e`in_virtualenv`\e[33m\u\e[37m@\e[33m\h\e[37m:\e[32m\w\e[00m$ '
+PS1='`in_virtualenv`\[\e[33m\]\u\[\e[37m\]@\[\e[33m\]\h\[\e[37m\]:\[\e[32m\]\w\[\e[00m\]\$ '
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
