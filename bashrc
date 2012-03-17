@@ -21,19 +21,17 @@ shopt -s checkwinsize
 
 in_virtualenv() {
   if [ x$VIRTUAL_ENV != x ]; then
-    if [[ $VIRTUAL_ENV == *.virtualenvs/* ]]; then
-      ENV_NAME=`basename "${VIRTUAL_ENV}"`
-    else
-      folder=`dirname "${VIRTUAL_ENV}"`
-      ENV_NAME=`basename "$folder"`
-    fi
+    folder=`dirname "${VIRTUAL_ENV}"`
+    ENV_NAME=`basename "$folder"`
     echo -n $'\033[37m(\033[31m'
     echo -n $ENV_NAME
     echo -n $'\033[37m)\033[00m'
   fi
 }
 
-PS1='\e`in_virtualenv`\e[35m\u\e[37m@\e[33m\h\e[37m:\e[32m\w\e[00m$ '
+PS1='\e`in_virtualenv`\e[33m\u\e[37m@\e[33m\h\e[37m:\e[32m\w\e[00m$ '
+
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
