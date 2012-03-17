@@ -1,10 +1,10 @@
 [Background]
 Color=0,0,0
-Transparency=true
+Transparency=false
 
 [BackgroundIntense]
 Color=0,0,0
-Transparency=true
+Transparency=false
 
 [Color0]
 Color=0,0,0
@@ -23,7 +23,7 @@ Color=249,36,110
 Transparency=false
 
 [Color2]
-Color=24,178,24
+Color=137,183,52
 Transparency=false
 
 [Color2Intense]
@@ -31,7 +31,7 @@ Color=139,197,65
 Transparency=false
 
 [Color3]
-Color=178,104,24
+Color=253,145,47
 Transparency=false
 
 [Color3Intense]
@@ -47,7 +47,7 @@ Color=116,137,220
 Transparency=false
 
 [Color5]
-Color=178,24,178
+Color=246,36,112
 Transparency=false
 
 [Color5Intense]
@@ -63,7 +63,7 @@ Color=84,255,255
 Transparency=false
 
 [Color7]
-Color=178,178,178
+Color=149,151,150
 Transparency=false
 
 [Color7Intense]
