@@ -2,3 +2,5 @@
 vim/.netrwhist
 *.sublime-project
 *.sublime-workspace
+sublime-text-2/*.cache
+
