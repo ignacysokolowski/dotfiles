@@ -59,3 +59,12 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+if [ -f ~/.ssh/sssha ]; then
+  . ~/.ssh/sssha
+fi
+
+if [ -d ~/workspace/bin ]; then
+  for item in $(ls -1 ~/workspace/bin); do
+    alias $item="source ~/workspace/bin/$item"
+  done
+fi
