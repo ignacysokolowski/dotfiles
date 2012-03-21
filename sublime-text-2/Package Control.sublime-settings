@@ -1,8 +1,9 @@
 {
-	"auto_upgrade_last_run": 1331577253,
+	"auto_upgrade_last_run": 1332364714,
 	"installed_packages":
 	[
 		"Block Nav",
+		"Git",
 		"INI",
 		"Jinja2",
 		"Package Control",
