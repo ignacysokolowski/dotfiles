@@ -21,5 +21,7 @@
 	        { "key": "selector", "operator": "equal", "operand": "source.python" }
 	    ]
 	},
-	{ "keys": ["ctrl+y"], "command": "as_above" }
+	{ "keys": ["ctrl+y"], "command": "as_above" },
+	{ "keys": ["alt+left"], "command": "caret_history", "args": { "action": "previous" } },
+	{ "keys": ["alt+right"], "command": "caret_history", "args": { "action": "next" } }
 ]
