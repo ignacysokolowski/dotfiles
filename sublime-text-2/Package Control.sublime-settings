@@ -1,7 +1,8 @@
 {
-	"auto_upgrade_last_run": 1332364714,
+	"auto_upgrade_last_run": 1332397547,
 	"installed_packages":
 	[
+		"AsAbove",
 		"Block Nav",
 		"Git",
 		"INI",
