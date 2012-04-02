@@ -6,9 +6,8 @@ install-vim:
 	ln -s ~/.vim/vimrc ~/.vimrc
 
 install-sublime-text-2:
-	rm -rf ~/.config/sublime-text-2/Packages/User ~/.config/sublime-text-2/Packages/SublimeBlockCursor
+	rm -rf ~/.config/sublime-text-2/Packages/User
 	ln -s `pwd`/sublime-text-2 ~/.config/sublime-text-2/Packages/User
-	ln -s `pwd`/sublime-text-2/SublimeBlockCursor ~/.config/sublime-text-2/Packages/SublimeBlockCursor
 
 install-konsole:
 	rm -rf ~/.kde/share/apps/konsole/ignacy.colorscheme ~/.kde/share/apps/konsole/Default.profile
