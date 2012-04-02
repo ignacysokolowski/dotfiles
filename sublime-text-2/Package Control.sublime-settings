@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1333351934,
+	"auto_upgrade_last_run": 1333366856,
 	"installed_packages":
 	[
 		"AsAbove",
@@ -17,5 +17,9 @@
 		"SublimeRope",
 		"Vintage Numbers",
 		"VintageEx"
+	],
+	"repositories":
+	[
+		"https://github.com/netpro2k/SublimeBlockCursor"
 	]
 }
