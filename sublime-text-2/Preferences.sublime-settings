@@ -8,5 +8,6 @@
 	"highlight_line": true,
 	"caret_style": "wide",
 	"rulers": [80],
-	"set_unsaved_view_name": false
+	"set_unsaved_view_name": false,
+	"detect_slow_plugins": false
 }
