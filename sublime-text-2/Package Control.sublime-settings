@@ -1,11 +1,12 @@
 {
-	"auto_upgrade_last_run": 1333366856,
+	"auto_upgrade_last_run": 1333469932,
 	"installed_packages":
 	[
 		"AsAbove",
 		"Block Nav",
 		"Caret History",
 		"Color Highlighter",
+		"ColorPicker",
 		"Git",
 		"INI",
 		"Jinja2",
