@@ -1,7 +1,8 @@
 {
-	"auto_upgrade_last_run": 1333469932,
+	"auto_upgrade_last_run": 1334121689,
 	"installed_packages":
 	[
+		"Anypreter",
 		"AsAbove",
 		"Block Nav",
 		"Caret History",
