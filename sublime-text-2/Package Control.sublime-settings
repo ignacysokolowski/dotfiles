@@ -1,12 +1,11 @@
 {
-	"auto_upgrade_last_run": 1334260177,
+	"auto_upgrade_last_run": 1334410770,
 	"installed_packages":
 	[
 		"Anypreter",
 		"AsAbove",
 		"Block Nav",
 		"Caret History",
-		"Color Highlighter",
 		"ColorPicker",
 		"Git",
 		"INI",

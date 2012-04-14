@@ -1,13 +1,18 @@
 {
+	"caret_style": "wide",
 	"color_scheme": "Packages/User/Twilight-Custom.tmTheme",
+	"detect_slow_plugins": false,
 	"font_face": "Monospace",
 	"font_size": 9,
-	"ignored_packages": [],
-	"vintage_ctrl_keys": true,
-	"vintage_start_in_command_mode": true,
 	"highlight_line": true,
-	"caret_style": "wide",
-	"rulers": [80],
+	"ignored_packages":
+	[
+	],
+	"rulers":
+	[
+		80
+	],
 	"set_unsaved_view_name": false,
-	"detect_slow_plugins": false
+	"vintage_ctrl_keys": true,
+	"vintage_start_in_command_mode": true
 }
