@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1334410770,
+	"auto_upgrade_last_run": 1334500860,
 	"installed_packages":
 	[
 		"Anypreter",
@@ -17,7 +17,8 @@
 		"SublimeRope",
 		"ToggleQuotes",
 		"Vintage Numbers",
-		"VintageEx"
+		"VintageEx",
+		"ZenCoding"
 	],
 	"repositories":
 	[
