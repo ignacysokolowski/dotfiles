@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1334500860,
+	"auto_upgrade_last_run": 1340691337,
 	"installed_packages":
 	[
 		"Anypreter",
@@ -10,6 +10,7 @@
 		"Git",
 		"INI",
 		"Jinja2",
+		"Modific",
 		"Package Control",
 		"Stylus",
 		"SublimeBlockCursor",
