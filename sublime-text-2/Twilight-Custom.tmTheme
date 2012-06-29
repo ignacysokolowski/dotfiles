@@ -487,6 +487,45 @@
 		</dict>
 		<dict>
 			<key>name</key>
+			<string>⎇ diff.deleted.diff</string>
+			<key>scope</key>
+			<string>markup.deleted.diff</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#420E09</string>
+				<key>foreground</key>
+				<string>#420E09</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>⎇ diff.changed.diff</string>
+			<key>scope</key>
+			<string>markup.changed.diff</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#4A410D</string>
+				<key>foreground</key>
+				<string>#4A410D</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>⎇ diff.inserted.diff</string>
+			<key>scope</key>
+			<string>markup.inserted.diff</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#253B22</string>
+				<key>foreground</key>
+				<string>#253B22</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
 			<string>Markup: List</string>
 			<key>scope</key>
 			<string>markup.list</string>
