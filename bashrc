@@ -19,6 +19,33 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+# append git branch and status to PS1.
+_git_status() {
+  branch=`git branch 2> /dev/null | grep '*' | sed 's!* !!'`
+
+  if [ x$branch != x ]; then
+    # change master branch to uppercase.
+    if [ $branch == 'master' ]; then
+      branch='MASTER'
+    fi
+    # get modified, untracked and staged number.
+    status=`git status -s 2> /dev/null`
+    modified=`echo -e "$status" | grep ' M ' | wc -l`
+    untracked=`echo -e "$status" | grep '?? ' | wc -l`
+    staged=`echo -e "$status" | grep 'M  \|A ' | wc -l`
+
+    echo -n $' \e[31m['
+    echo -n $branch
+    echo -n $' \e[35m'
+    echo -n $staged
+    echo -n $' \e[32m'
+    echo -n $modified
+    echo -n $' \e[36m'
+    echo -n $untracked
+    echo -n $'\e[31m]'
+  fi
+}
+
 in_virtualenv() {
   if [ x$VIRTUAL_ENV != x ]; then
     folder=`dirname "${VIRTUAL_ENV}"`
@@ -29,7 +56,7 @@ in_virtualenv() {
   fi
 }
 
-PS1='`in_virtualenv`\[\e[33m\]\u\[\e[37m\]@\[\e[33m\]\h\[\e[37m\]:\[\e[32m\]\w\[\e[00m\]\$ '
+PS1='`in_virtualenv`\[\e[33m\]\u\[\e[37m\]@\[\e[33m\]\h\[\e[37m\]:\[\e[32m\]\w\[\]`_git_status`\e[00m\]\$ '
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
