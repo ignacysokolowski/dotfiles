@@ -21,6 +21,8 @@
   ci = commit
   co = checkout
   br = branch
+  pl = pull
+  ps = push
   slog = log --pretty=oneline --abbrev-commit
   glog = log --graph --decorate --pretty=oneline --abbrev-commit
   gloga = log --graph --decorate --pretty=oneline --abbrev-commit --all
