@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1342771660,
+	"auto_upgrade_last_run": 1345224747,
 	"installed_packages":
 	[
 		"Anypreter",
@@ -13,6 +13,7 @@
 		"JsMinifier",
 		"Mako",
 		"Modific",
+		"MoveTab",
 		"Package Control",
 		"Stylus",
 		"SublimeBlockCursor",
