@@ -40,3 +40,7 @@ workspace () {
   cd $HOME/workspace/$1/src
   activate-env
 }
+
+ovpn () {
+  sudo openvpn --config $HOME/.ovpn/$1/conf.ovpn --cd $HOME/.ovpn/$1/ --daemon openvpn-$1
+}
