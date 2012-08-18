@@ -19,4 +19,5 @@ install-dotfiles:
 	ln -s `pwd`/bashrc ~/.bashrc
 	ln -s `pwd`/bash_aliases ~/.bash_aliases
 	ln -s `pwd`/gitconfig ~/.gitconfig
+	ln -s `pwd`/htoprc ~/.htoprc
 
