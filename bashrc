@@ -19,9 +19,18 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# append git branch and status to PS1.
-_git_status() {
-  branch=`git branch 2> /dev/null | grep '*' | sed 's!* !!'`
+bash_prompt() {
+  # define colors for prompt.
+  local PS_CLEAR="\[\033[0;00m\]"
+  local ORANGE="\[\033[0;33m\]"
+  local GRAY="\[\033[0;37m\]"
+  local GREEN="\[\033[0;32m\]"
+  local RED="\[\033[0;31m\]"
+  local PINK="\[\033[0;35m\]"
+  local CYAN="\[\033[0;36m\]"
+
+  # append git branch and status to prompt.
+  local branch=`git branch 2> /dev/null | grep '*' | sed 's!* !!'`
 
   if [ x$branch != x ]; then
     # change master branch to uppercase.
@@ -29,34 +38,25 @@ _git_status() {
       branch='MASTER'
     fi
     # get modified, untracked and staged number.
-    status=`git status -s 2> /dev/null`
-    modified=`echo -e "$status" | grep ' M ' | wc -l`
-    untracked=`echo -e "$status" | grep '?? ' | wc -l`
-    staged=`echo -e "$status" | grep 'M  \|A ' | wc -l`
+    local status=`git status -s 2> /dev/null`
+    local modified=`echo "$status" | grep ' M ' | wc -l`
+    local untracked=`echo "$status" | grep '?? ' | wc -l`
+    local staged=`echo "$status" | grep 'M  \|A ' | wc -l`
 
-    echo -n $' \e[31m['
-    echo -n $branch
-    echo -n $' \e[35m'
-    echo -n $staged
-    echo -n $' \e[32m'
-    echo -n $modified
-    echo -n $' \e[36m'
-    echo -n $untracked
-    echo -n $'\e[31m]'
+    local GIT_STATUS=" ${RED}[$branch ${PINK}$staged ${GREEN}$modified ${CYAN}$untracked${RED}]"
   fi
-}
 
-in_virtualenv() {
+  # prepend virtualenv name to prompt.
   if [ x$VIRTUAL_ENV != x ]; then
-    folder=`dirname "${VIRTUAL_ENV}"`
-    ENV_NAME=`basename "$folder"`
-    echo -n $'('
-    echo -n $ENV_NAME
-    echo -n $')'
+    local folder=`dirname "${VIRTUAL_ENV}"`
+    local ENV_NAME=`basename "$folder"`
+    local IN_VIRTUALENV="($ENV_NAME)"
   fi
+
+  PS1="$IN_VIRTUALENV${ORANGE}\u${GRAY}@${ORANGE}\h${GRAY}:${GREEN}\w$GIT_STATUS${PS_CLEAR}\$ "
 }
 
-PS1='`in_virtualenv`\[\e[33m\]\u\[\e[37m\]@\[\e[33m\]\h\[\e[37m\]:\[\e[32m\]\w\[\]`_git_status`\e[00m\]\$ '
+PROMPT_COMMAND=bash_prompt
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
