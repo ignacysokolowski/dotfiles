@@ -1,0 +1,16 @@
+_workspace_projects() {
+  local cur
+  cur="${COMP_WORDS[COMP_CWORD]}"
+  COMPREPLY=($(compgen -W '$(cd $HOME/workspace/; ls -d $cur* 2>/dev/null)'))
+}
+
+_ovpn_dirs() {
+  local cur
+  cur="${COMP_WORDS[COMP_CWORD]}"
+  COMPREPLY=($(compgen -W '$(cd $HOME/.ovpn/; ls -d $cur* 2>/dev/null)'))
+}
+
+complete -F _workspace_projects workspace
+
+complete -F _ovpn_dirs ovpn
+
