@@ -44,3 +44,8 @@ workspace () {
 ovpn () {
   sudo openvpn --config $HOME/.ovpn/$1/conf.ovpn --cd $HOME/.ovpn/$1/ --daemon openvpn-$1
 }
+
+# Create a new directory and enter it.
+function mkd() {
+  mkdir -p "$@" && cd "$@"
+}
