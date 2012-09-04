@@ -25,6 +25,7 @@
   pl = pull
   ps = push
   dc = diff --cached
+  ri = rebase --interactive
   l = log --pretty=format:'%C(yellow)%h %Cgreen%an %Creset%s'
   slog = log --pretty=oneline --abbrev-commit
   glog = log --graph --decorate --pretty=oneline --abbrev-commit
