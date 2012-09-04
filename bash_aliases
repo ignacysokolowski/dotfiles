@@ -49,3 +49,5 @@ ovpn () {
 function mkd() {
   mkdir -p "$@" && cd "$@"
 }
+
+alias pysmtp='sudo python -m smtpd -n -c DebuggingServer localhost:25'
