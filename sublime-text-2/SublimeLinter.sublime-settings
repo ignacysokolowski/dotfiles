@@ -30,5 +30,6 @@
         "universal-selector": false,
         "vendor-prefix": false,
         "zero-units": false
-    }
+    },
+    "pep8_ignore": []
 }
