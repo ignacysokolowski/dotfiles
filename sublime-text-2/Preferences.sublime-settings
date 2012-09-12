@@ -5,6 +5,7 @@
 	"font_face": "Monospace",
 	"font_size": 9,
 	"highlight_line": true,
+	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
 	],
@@ -14,6 +15,5 @@
 	],
 	"set_unsaved_view_name": false,
 	"vintage_ctrl_keys": true,
-	"vintage_start_in_command_mode": true,
-	"highlight_modified_tabs": true
+	"vintage_start_in_command_mode": true
 }
