@@ -32,3 +32,5 @@
   glog = log --graph --decorate --pretty=oneline --abbrev-commit
   gloga = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
+[core]
+	excludesfile = /home/ignacy/.gitignore
