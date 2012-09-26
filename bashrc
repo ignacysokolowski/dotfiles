@@ -32,9 +32,9 @@ bash_prompt() {
   # append git branch and status to prompt.
   local branch=`git branch 2> /dev/null | grep '*' | sed 's!* !!'`
 
-  if [ x$branch != x ]; then
+  if [ "x$branch" != x ]; then
     # change master branch to uppercase.
-    if [ $branch == 'master' ]; then
+    if [ "$branch" == 'master' ]; then
       branch='MASTER'
     fi
     # get modified, untracked and staged number.
