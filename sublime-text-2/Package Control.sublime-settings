@@ -1,7 +1,8 @@
 {
-	"auto_upgrade_last_run": 1345224747,
+	"auto_upgrade_last_run": 1348997373,
 	"installed_packages":
 	[
+		"AdvancedNewFile",
 		"Anypreter",
 		"AsAbove",
 		"Block Nav",
