@@ -1,5 +1,6 @@
 [
 	{ "keys": ["ctrl+shift+o"], "command": "prompt_open_folder" },
+	{ "keys": ["ctrl+s"], "command": "toggle_side_bar" },
 	{ "keys": ["g", "t"], "command": "next_view", "context":
 		[
 			{ "key": "setting.command_mode", "operand": true },
