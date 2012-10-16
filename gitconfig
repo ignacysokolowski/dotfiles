@@ -22,7 +22,7 @@
   ci = commit
   co = checkout
   br = branch
-  pl = pull
+  pl = pull --rebase
   ps = push
   dc = diff --cached
   r = rebase
