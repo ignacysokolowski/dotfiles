@@ -51,3 +51,4 @@ function mkd() {
 }
 
 alias pysmtp='sudo python -m smtpd -n -c DebuggingServer localhost:25'
+alias :q='exit'
