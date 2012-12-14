@@ -27,10 +27,10 @@
   dc = diff --cached
   r = rebase
   ri = rebase --interactive
-  l = log --pretty=format:'%C(yellow)%h %Cgreen%an %Creset%s'
-  slog = log --pretty=oneline --abbrev-commit
-  glog = log --graph --decorate --pretty=oneline --abbrev-commit
-  gloga = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  l = log --pretty=format:'%C(yellow)%h %Cred%ai %Cgreen%an %Creset%s'
+  lm = log --pretty=format:'%C(yellow)%h %Cred%ai %Creset%s %Cgreen%an'
+  lg = log --graph --pretty=format:'%C(yellow)%h %Cred%ai %Cgreen%an %C(yellow bold)%d %Creset%s'
+  glog = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
 [core]
 	excludesfile = /home/ignacy/.gitignore
