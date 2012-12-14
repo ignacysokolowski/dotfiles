@@ -94,3 +94,6 @@ fi
 if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH"
 fi
+
+# Vi editing mode.
+set -o vi
