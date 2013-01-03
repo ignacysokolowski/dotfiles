@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1348997373,
+	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
 		"AdvancedNewFile",
@@ -9,12 +9,12 @@
 		"Caret History",
 		"ColorPicker",
 		"Git",
+		"GitGutter",
 		"INI",
 		"Jinja2",
 		"jQuery Snippets pack",
 		"JsMinifier",
 		"Mako",
-		"Modific",
 		"MoveTab",
 		"Package Control",
 		"SideBarEnhancements",
