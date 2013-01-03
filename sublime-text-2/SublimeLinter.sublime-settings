@@ -31,5 +31,6 @@
         "vendor-prefix": false,
         "zero-units": false
     },
-    "pep8_ignore": []
+    "pep8_ignore": [],
+    "sublimelinter_delay": 0.5
 }
