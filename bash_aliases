@@ -50,5 +50,22 @@ function mkd() {
   mkdir -p "$@" && cd "$@"
 }
 
+# Run PyTest with coverage and linting on specified application part.
+#
+# Useful shortcut when you're working at one class/function/module and you
+# don't want to run all your tests and need to measure coverage only for what
+# you're currently testing.
+#
+# Example::
+#
+#     $ test_part tests/test_views.py app/views.py -vsk LoginView
+#
+# 1st param: file or directory with tests to run
+# 2nd param: path to measure coverage for
+# Any additional params will be added as py.test params
+test_part () {
+  py.test --cov $2 --cov-report term-missing --cov-report html --pep8 --flakes $1 ${@:3}
+}
+
 alias pysmtp='sudo python -m smtpd -n -c DebuggingServer localhost:25'
 alias :q='exit'
