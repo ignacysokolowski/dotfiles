@@ -33,7 +33,7 @@
 			{ "key": "setting.command_mode", "operand": false }
 		]
 	},
-	{ "keys": ["alt+left"], "command": "caret_history", "args": { "action": "previous" } },
-	{ "keys": ["alt+right"], "command": "caret_history", "args": { "action": "next" } },
 	{ "keys": ["ctrl+alt+2"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} }
+	{ "keys": ["alt+h"], "command": "caret_history", "args": { "action": "previous" } },
+	{ "keys": ["alt+l"], "command": "caret_history", "args": { "action": "next" } },
 ]
