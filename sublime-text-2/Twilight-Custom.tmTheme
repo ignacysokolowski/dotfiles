@@ -631,6 +631,28 @@
 		        <string>#DF940077</string>
 		    </dict>
 		</dict>
+		<dict>
+			<key>name</key>
+			<string>reStructuredText inline literal</string>
+			<key>scope</key>
+			<string>markup.raw.restructuredtext</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#d4c587</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>reStructuredText interpreted text</string>
+			<key>scope</key>
+			<string>markup.other.command.restructuredtext</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#B2C188</string>
+			</dict>
+		</dict>
 	</array>
 	<key>uuid</key>
 	<string>766026CB-703D-4610-B070-8DE07D967C5F</string>
