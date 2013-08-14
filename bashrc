@@ -97,3 +97,8 @@ fi
 
 # Vi editing mode.
 set -o vi
+
+# Run local bashrc, ignored by dotfiles source control.
+if [ -f ~/.local_bashrc ]; then
+    . ~/.local_bashrc
+fi
