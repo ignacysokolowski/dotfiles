@@ -3,17 +3,13 @@
 	"installed_packages":
 	[
 		"AdvancedNewFile",
-		"Anypreter",
 		"AsAbove",
 		"Block Nav",
 		"Caret History",
-		"ColorPicker",
 		"Current Scope",
-		"Git",
 		"GitGutter",
 		"INI",
 		"Jinja2",
-		"jQuery Snippets pack",
 		"JsMinifier",
 		"Mako",
 		"MoveTab",
