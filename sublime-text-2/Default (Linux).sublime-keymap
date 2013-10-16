@@ -41,6 +41,18 @@
 	{ "keys": ["ctrl+8"], "command": "find_under_expand" },
 	{ "keys": ["alt+h"], "command": "caret_history", "args": { "action": "previous" } },
 	{ "keys": ["alt+l"], "command": "caret_history", "args": { "action": "next" } },
+	{ "keys": ["alt+shift+j"], "command": "set_motion", "args": {
+		"motion": "select_lines",
+		"motion_args": { "forward": true },
+		"linewise": true },
+		"context": [{"key": "setting.command_mode"}]
+	},
+	{ "keys": ["alt+shift+k"], "command": "set_motion", "args": {
+		"motion": "select_lines",
+		"motion_args": { "forward": false },
+		"linewise": true },
+		"context": [{"key": "setting.command_mode"}]
+	},
 	{ "keys": ["ctrl+alt+2"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
 
 	{
