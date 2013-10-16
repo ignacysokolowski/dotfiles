@@ -78,5 +78,27 @@
 	    [
 	        { "key": "overlay_visible", "operator": "equal", "operand": true }
 	    ]
-	}
+	},
+	{
+		"keys": ["control+shift+minus"],
+        "command": "fold_python_docstrings",
+        "context": [
+            {
+                "key": "selector",
+                "operator": "equal",
+                "operand": "source.python"
+            }
+        ]
+    },
+    {
+        "keys": ["control+shift+equals"],
+        "command": "unfold_python_docstrings",
+        "context": [
+            {
+                "key": "selector",
+                "operator": "equal",
+                "operand": "source.python"
+            }
+        ]
+    }
 ]
