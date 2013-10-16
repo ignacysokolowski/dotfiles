@@ -18,6 +18,11 @@
 	        { "key": "selector", "operator": "equal", "operand": "source.python" }
 	    ]
 	},
+	{ "keys": ["g", "b"], "command": "back_to_python_definition", "context":
+	    [
+	        { "key": "selector", "operator": "equal", "operand": "source.python" }
+	    ]
+	},
 	{ "keys": ["ctrl+t", "ctrl+i"], "command": "python_auto_import", "context":
 	    [
 	        { "key": "selector", "operator": "equal", "operand": "source.python" }
