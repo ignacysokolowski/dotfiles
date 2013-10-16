@@ -4,6 +4,8 @@ activate-env () {
   # Set global variables for project paths.
   PROJECT=`dirname $(pwd)`
   export PROJECT
+  ENVFILE="$PROJECT/.env"
+  export ENVFILE
   SRC="$PROJECT/src"
   export SRC
   APP="$SRC/$(basename $PROJECT)"
@@ -14,13 +16,14 @@ activate-env () {
   fi
 
   # Source project's custom environment file.
-  if [ -f ../.env ]; then
-    source ../.env
+  if [ -f $ENVFILE ]; then
+    source $ENVFILE
   fi
 
   base-deactivate-env () {
     # Reset old virtualenv variables and functions.
     unset PROJECT
+    unset ENVFILE
     unset SRC
     unset APP
     unset -f base-deactivate-env 2> /dev/null
