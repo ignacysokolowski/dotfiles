@@ -33,5 +33,12 @@
   lg = log --graph --pretty=format:'%C(yellow)%h %Cred%ai %Cgreen%an %C(yellow bold)%d %Creset%s'
   glog = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
+  ff = flow feature
+  ffs = flow feature start
+  ffp = flow feature publish
+  fff = flow feature finish
+  fhs = flow hotfix start
+  fhf = flow hotfix finish
+
 [core]
 	excludesfile = /home/ignacy/.gitignore
