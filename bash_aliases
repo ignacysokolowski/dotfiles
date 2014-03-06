@@ -1,5 +1,5 @@
 activate-env () {
-  source ../env/bin/activate
+  source "../env$1/bin/activate"  # e.g. 'env2.7', 'env3.3'
 
   # Set global variables for project paths.
   PROJECT=`dirname $(pwd)`
