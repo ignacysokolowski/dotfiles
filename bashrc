@@ -47,6 +47,17 @@ bash_prompt() {
     local GIT_STATUS=" ${RED}[$git_branch ${PINK}$staged ${GREEN}$modified ${CYAN}$untracked${RED}]"
   fi
 
+  # append SVN status to prompt.
+  local svn_status=`svn st 2> /dev/null`
+
+  if [ "x$svn_status" != x ]; then
+    # get modified and new number.
+    local modified=`echo "$svn_status" | grep 'M ' | wc -l`
+    local new=`echo "$svn_status" | grep '? ' | wc -l`
+
+    local SVN_STATUS=" ${RED}[SVN ${GREEN}$modified ${CYAN}$new${RED}]"
+  fi
+
   # prepend virtualenv name to prompt.
   if [ x$VIRTUAL_ENV != x ]; then
     local folder=`dirname "${VIRTUAL_ENV}"`
@@ -54,7 +65,7 @@ bash_prompt() {
     local IN_VIRTUALENV="($ENV_NAME)"
   fi
 
-  PS1="$IN_VIRTUALENV${ORANGE}\u${GRAY}@${ORANGE}\h${GRAY}:${GREEN}\w$GIT_STATUS${PS_CLEAR}\$ "
+  PS1="$IN_VIRTUALENV${ORANGE}\u${GRAY}@${ORANGE}\h${GRAY}:${GREEN}\w$GIT_STATUS$SVN_STATUS${PS_CLEAR}\$ "
 }
 
 PROMPT_COMMAND=bash_prompt
