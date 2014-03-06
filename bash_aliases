@@ -44,6 +44,18 @@ workspace () {
   activate-env
 }
 
+mkproject () {
+  cd $HOME/workspace
+  mkd $1
+  if [ $2 ]; then
+    virtualenv env -p $2
+  else
+    virtualenv env
+  fi
+  mkd src
+  activate-env
+}
+
 ovpn () {
   sudo openvpn --config $HOME/.ovpn/$1/conf.ovpn --cd $HOME/.ovpn/$1/ --daemon openvpn-$1
 }
