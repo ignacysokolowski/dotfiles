@@ -27,6 +27,8 @@
   dc = diff --cached
   r = rebase
   ri = rebase --interactive --autosquash
+  rs = rebase --skip
+  rc = rebase --continue
   fixup = !sh -c 'git commit --fixup=HEAD && git rebase --interactive --autosquash HEAD~2'
   l = log --pretty=format:'%C(yellow)%h %Cred%ai %Cgreen%an %Creset%s'
   lm = log --pretty=format:'%C(yellow)%h %Cred%ai %Creset%s %Cgreen%an'
