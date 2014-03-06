@@ -26,16 +26,17 @@ bash_prompt() {
   local GRAY="\[\033[0;37m\]"
   local GREEN="\[\033[0;32m\]"
   local RED="\[\033[0;31m\]"
+  local RED_BG="\[\033[0;7;31m\]"
   local PINK="\[\033[0;35m\]"
   local CYAN="\[\033[0;36m\]"
 
   # append git branch and status to prompt.
-  local branch=`git branch 2> /dev/null | grep '*' | sed 's!* !!'`
+  local git_branch=`git branch 2> /dev/null | grep '*' | sed 's!* !!'`
 
-  if [ "x$branch" != x ]; then
+  if [ "x$git_branch" != x ]; then
     # change master branch to uppercase.
-    if [ "$branch" == 'master' ]; then
-      branch='MASTER'
+    if [ "$git_branch" == 'master' ]; then
+      git_branch="${RED_BG}MASTER${PS_CLEAR}"
     fi
     # get modified, untracked and staged number.
     local status=`git status -s 2> /dev/null`
@@ -43,7 +44,7 @@ bash_prompt() {
     local untracked=`echo "$status" | grep '?? ' | wc -l`
     local staged=`echo "$status" | grep 'M  \|A ' | wc -l`
 
-    local GIT_STATUS=" ${RED}[$branch ${PINK}$staged ${GREEN}$modified ${CYAN}$untracked${RED}]"
+    local GIT_STATUS=" ${RED}[$git_branch ${PINK}$staged ${GREEN}$modified ${CYAN}$untracked${RED}]"
   fi
 
   # prepend virtualenv name to prompt.
