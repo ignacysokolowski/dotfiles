@@ -72,6 +72,8 @@ PROMPT_COMMAND=bash_prompt
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
+export MYSQL_PS1="MySQL \u@\h:\d> "
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
