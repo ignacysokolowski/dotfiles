@@ -25,6 +25,7 @@
   pl = pull --rebase
   ps = push
   dc = diff --cached
+  rh = reset --hard
   r = rebase
   ri = rebase --interactive --autosquash
   rs = rebase --skip
