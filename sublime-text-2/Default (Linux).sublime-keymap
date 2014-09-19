@@ -43,7 +43,11 @@
     },
     {
         "keys": ["g", "t"],
-        "command": "next_view",
+        "command": "set_motion",
+        "args": {
+            "motion": "next_view",
+            "use_window": true
+        },
         "context": [
             {
                 "key": "setting.command_mode",
@@ -57,7 +61,11 @@
     },
     {
         "keys": ["g", "T"],
-        "command": "prev_view",
+        "command": "set_motion",
+        "args": {
+            "motion": "prev_view",
+            "use_window": true
+        },
         "context": [
             {
                 "key": "setting.command_mode",
