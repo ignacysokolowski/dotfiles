@@ -2,10 +2,8 @@
 	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
-		"AdvancedNewFile",
 		"AsAbove",
 		"Block Nav",
-		"Caret History",
 		"Current Scope",
 		"FileBrowser",
 		"Fold Python Docstrings",
@@ -25,15 +23,13 @@
 		"Restructured Text (RST) Snippets",
 		"SideBarEnhancements",
 		"Strapdown Markdown Preview",
-		"Stylus",
 		"SublimeBlockCursor",
 		"SublimeCodeIntel",
 		"SublimeGit",
 		"TagWrapper",
 		"ToggleQuotes",
 		"Vintage Numbers",
-		"VintageEx",
-		"ZenCoding"
+		"VintageEx"
 	],
 	"repositories":
 	[
