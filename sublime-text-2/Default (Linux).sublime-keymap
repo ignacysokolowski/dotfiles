@@ -108,6 +108,26 @@
         ]
     },
     {
+        "keys": ["g", "n"],
+        "command": "git_gutter_next_change",
+        "context": [
+            {
+                "key": "setting.command_mode",
+                "operand": true
+            }
+        ]
+    },
+    {
+        "keys": ["g", "p"],
+        "command": "git_gutter_prev_change",
+        "context": [
+            {
+                "key": "setting.command_mode",
+                "operand": true
+            }
+        ]
+    },
+    {
         "keys": ["ctrl+t", "ctrl+i"],
         "command": "python_auto_import",
         "context": [
