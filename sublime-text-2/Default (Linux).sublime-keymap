@@ -187,6 +187,31 @@
         ]
     },
     {
+        "keys": ["g", "s"],
+        "command": "git_status",
+        "context": [
+            {
+                "key": "setting.command_mode",
+                "operand": true
+            }
+        ]
+    },
+    {
+        "keys": ["g", "o"],
+        "command": "git_status_open_file",
+        "context": [
+            {
+                "key": "selector",
+                "operator": "equal",
+                "operand": "meta.git-status.line"
+            },
+            {
+                "key": "setting.command_mode",
+                "operand": true
+            }
+        ]
+    },
+    {
         "keys": ["g", "n"],
         "command": "git_gutter_next_change",
         "context": [

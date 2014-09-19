@@ -1,0 +1,9 @@
+{
+    "git_status_open_files_transient": false,
+    "git_update_status_on_focus": false,
+    "git_commit_pedantic": true,
+    "git_extensions": {
+        "git_flow": false,
+        "legit": false
+    }
+}
