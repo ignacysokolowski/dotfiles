@@ -4,6 +4,7 @@
 	"caret_style": "wide",
 	"color_scheme": "Packages/User/Twilight-Custom.tmTheme",
 	"detect_slow_plugins": false,
+	"findreplace_small": true,
 	"font_face": "Monospace",
 	"font_size": 8,
 	"highlight_line": true,
@@ -19,6 +20,8 @@
 	"set_unsaved_view_name": false,
 	"show_panel_on_build": false,
 	"show_tab_close_buttons": false,
+	"tabs_small": true,
+	"theme": "predawn.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"vintage_ctrl_keys": true,
 	"vintage_start_in_command_mode": true
