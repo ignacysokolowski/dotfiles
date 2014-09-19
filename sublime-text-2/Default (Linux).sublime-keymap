@@ -1,86 +1,184 @@
 [
-	{ "keys": ["ctrl+shift+o"], "command": "prompt_open_folder" },
-	{ "keys": ["ctrl+s"], "command": "toggle_side_bar" },
-	{ "keys": ["g", "t"], "command": "next_view", "context":
-		[
-			{ "key": "setting.command_mode", "operand": true },
-			{ "key": "setting.is_widget", "operand": false }
-		]
-	},
-	{ "keys": ["g", "T"], "command": "prev_view", "context":
-		[
-			{ "key": "setting.command_mode", "operand": true },
-			{ "key": "setting.is_widget", "operand": false }
-		]
-	},
-	{ "keys": ["g", "d"], "command": "goto_python_definition", "context":
-	    [
-	        { "key": "selector", "operator": "equal", "operand": "source.python" }
-	    ]
-	},
-	{ "keys": ["g", "b"], "command": "back_to_python_definition", "context":
-	    [
-	        { "key": "selector", "operator": "equal", "operand": "source.python" }
-	    ]
-	},
-	{ "keys": ["ctrl+t", "ctrl+i"], "command": "python_auto_import", "context":
-	    [
-	        { "key": "selector", "operator": "equal", "operand": "source.python" }
-	    ]
-	},
-	{ "keys": ["ctrl+t", "ctrl+r"], "command": "python_refactor_rename", "context":
-	    [
-	        { "key": "selector", "operator": "equal", "operand": "source.python" }
-	    ]
-	},
-	{ "keys": ["ctrl+y"], "command": "as_above", "context":
-		[
-			{ "key": "setting.command_mode", "operand": false }
-		]
-	},
-	{ "keys": ["ctrl+8"], "command": "find_under_expand" },
-	{ "keys": ["alt+h"], "command": "caret_history", "args": { "action": "previous" } },
-	{ "keys": ["alt+l"], "command": "caret_history", "args": { "action": "next" } },
-	{ "keys": ["alt+shift+j"], "command": "set_motion", "args": {
-		"motion": "select_lines",
-		"motion_args": { "forward": true },
-		"linewise": true },
-		"context": [{"key": "setting.command_mode"}]
-	},
-	{ "keys": ["alt+shift+k"], "command": "set_motion", "args": {
-		"motion": "select_lines",
-		"motion_args": { "forward": false },
-		"linewise": true },
-		"context": [{"key": "setting.command_mode"}]
-	},
-	{ "keys": ["ctrl+alt+2"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
-
-	{
-		"keys": ["ctrl+j"],
-		"command": "move",
-		"args": {
-		    "by": "lines",
-		    "forward": true
-		},
-	    "context":
-	    [
-	        { "key": "overlay_visible", "operator": "equal", "operand": true }
-	    ]
-	},
-	{
-		"keys": ["ctrl+k"],
-		"command": "move",
-		"args": {
-		    "by": "lines",
-		    "forward": false
-		},
-	    "context":
-	    [
-	        { "key": "overlay_visible", "operator": "equal", "operand": true }
-	    ]
-	},
-	{
-		"keys": ["control+shift+minus"],
+    {
+        "keys": ["ctrl+shift+o"],
+        "command": "prompt_open_folder"
+    },
+    {
+        "keys": ["ctrl+s"],
+        "command": "toggle_side_bar"
+    },
+    {
+        "keys": ["g", "t"],
+        "command": "next_view",
+        "context": [
+            {
+                "key": "setting.command_mode",
+                "operand": true
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
+            }
+        ]
+    },
+    {
+        "keys": ["g", "T"],
+        "command": "prev_view",
+        "context": [
+            {
+                "key": "setting.command_mode",
+                "operand": true
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
+            }
+        ]
+    },
+    {
+        "keys": ["g", "d"],
+        "command": "goto_python_definition",
+        "context": [
+            {
+                "key": "selector",
+                "operator": "equal",
+                "operand": "source.python"
+            }
+        ]
+    },
+    {
+        "keys": ["g", "b"],
+        "command": "back_to_python_definition",
+        "context": [
+            {
+                "key": "selector",
+                "operator": "equal",
+                "operand": "source.python"
+            }
+        ]
+    },
+    {
+        "keys": ["ctrl+t", "ctrl+i"],
+        "command": "python_auto_import",
+        "context": [
+            {
+                "key": "selector",
+                "operator": "equal",
+                "operand": "source.python"
+            }
+        ]
+    },
+    {
+        "keys": ["ctrl+t", "ctrl+r"],
+        "command": "python_refactor_rename",
+        "context": [
+            {
+                "key": "selector",
+                "operator": "equal",
+                "operand": "source.python"
+            }
+        ]
+    },
+    {
+        "keys": ["ctrl+y"],
+        "command": "as_above",
+        "context": [
+            {
+                "key": "setting.command_mode",
+                "operand": false
+            }
+        ]
+    },
+    {
+        "keys": ["ctrl+8"],
+        "command": "find_under_expand"
+    },
+    {
+        "keys": ["alt+h"],
+        "command": "caret_history",
+        "args": {
+            "action": "previous"
+        }
+    },
+    {
+        "keys": ["alt+l"],
+        "command": "caret_history",
+        "args": {
+            "action": "next"
+        }
+    },
+    {
+        "keys": ["alt+shift+j"],
+        "command": "set_motion",
+        "args": {
+            "motion": "select_lines",
+            "motion_args": {
+                "forward": true
+            },
+            "linewise": true
+        },
+        "context": [
+            {
+                "key": "setting.command_mode"
+            }
+        ]
+    },
+    {
+        "keys": ["alt+shift+k"],
+        "command": "set_motion",
+        "args": {
+            "motion": "select_lines",
+            "motion_args": {
+                "forward": false
+            },
+            "linewise": true
+        },
+        "context": [
+            {
+                "key": "setting.command_mode"
+            }
+        ]
+    },
+    {
+        "keys": ["ctrl+alt+2"],
+        "command": "show_overlay",
+        "args": {
+            "overlay": "goto",
+            "text": "@"
+        }
+    },
+    {
+        "keys": ["ctrl+j"],
+        "command": "move",
+        "args": {
+            "by": "lines",
+            "forward": true
+        },
+        "context": [
+            {
+                "key": "overlay_visible",
+                "operator": "equal",
+                "operand": true
+            }
+        ]
+    },
+    {
+        "keys": ["ctrl+k"],
+        "command": "move",
+        "args": {
+            "by": "lines",
+            "forward": false
+        },
+        "context": [
+            {
+                "key": "overlay_visible",
+                "operator": "equal",
+                "operand": true
+            }
+        ]
+    },
+    {
+        "keys": ["control+shift+minus"],
         "command": "fold_python_docstrings",
         "context": [
             {
