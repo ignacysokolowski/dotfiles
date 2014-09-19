@@ -85,6 +85,10 @@
                 "key": "selector",
                 "operator": "equal",
                 "operand": "source.python"
+            },
+            {
+                "key": "setting.command_mode",
+                "operand": true
             }
         ]
     },
@@ -96,6 +100,10 @@
                 "key": "selector",
                 "operator": "equal",
                 "operand": "source.python"
+            },
+            {
+                "key": "setting.command_mode",
+                "operand": true
             }
         ]
     },
