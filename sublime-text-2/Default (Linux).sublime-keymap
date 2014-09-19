@@ -178,6 +178,15 @@
         ]
     },
     {
+        "keys": ["g", "l"],
+        "command": "traceback_goto_line",
+        "context": [
+            {
+                "key": "python_traceback"
+            }
+        ]
+    },
+    {
         "keys": ["g", "n"],
         "command": "git_gutter_next_change",
         "context": [
