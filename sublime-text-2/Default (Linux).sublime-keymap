@@ -515,5 +515,30 @@
                 "operand": true
             }
         ]
+    },
+    {
+        "keys": ["escape"],
+        "command": "run_multiple_commands",
+        "args": {
+            "commands": [
+                {"command": "exit_insert_mode"},
+                {"command": "hide_auto_complete"}
+            ]
+        },
+        "context": [
+            {
+                "key": "auto_complete_visible",
+                "operator": "equal",
+                "operand": true
+            },
+            {
+                "key": "setting.command_mode",
+                "operand": false
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
+            }
+        ]
     }
 ]
