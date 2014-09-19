@@ -40,6 +40,7 @@
   lm = log --pretty=format:'%C(yellow)%h %Cred%ai %Creset%s %Cgreen%an'
   lg = log --graph --pretty=format:'%C(yellow)%h %Cred%ai %Cgreen%an %C(yellow bold)%d %Creset%s'
   glog = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  mylog = log --pretty=format:'%C(yellow)%h %Cred%ai %Creset%s' --author=Ignacy --no-merges
 
   ff = flow feature
   ffs = flow feature start
