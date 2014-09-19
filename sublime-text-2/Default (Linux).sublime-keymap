@@ -8,6 +8,40 @@
         "command": "toggle_side_bar"
     },
     {
+        "keys": ["ctrl+shift+h"],
+        "command": "set_motion",
+        "args": {
+            "motion": "move_tab",
+            "motion_args": {
+                "position": "-1"
+            },
+            "use_window": true
+        },
+        "context": [
+            {
+                "key": "setting.command_mode",
+                "operand": true
+            }
+        ]
+    },
+    {
+        "keys": ["ctrl+shift+l"],
+        "command": "set_motion",
+        "args": {
+            "motion": "move_tab",
+            "motion_args": {
+                "position": "+1"
+            },
+            "use_window": true
+        },
+        "context": [
+            {
+                "key": "setting.command_mode",
+                "operand": true
+            }
+        ]
+    },
+    {
         "keys": ["g", "t"],
         "command": "next_view",
         "context": [
