@@ -1,0 +1,5 @@
+{
+    "lint_on_load": true,
+    "popup": false,
+    "gutter_marks": "dot"
+}

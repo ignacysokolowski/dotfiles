@@ -128,6 +128,16 @@
         ]
     },
     {
+        "keys": ["g", "e"],
+        "command": "flake8_next_error",
+        "context": [
+            {
+                "key": "setting.command_mode",
+                "operand": true
+            }
+        ]
+    },
+    {
         "keys": ["ctrl+t", "ctrl+i"],
         "command": "python_auto_import",
         "context": [
