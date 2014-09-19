@@ -17,6 +17,7 @@
 	],
 	"set_unsaved_view_name": false,
 	"show_panel_on_build": false,
+	"show_tab_close_buttons": false,
 	"vintage_ctrl_keys": true,
 	"vintage_start_in_command_mode": true
 }
