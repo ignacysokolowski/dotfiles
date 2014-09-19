@@ -10,6 +10,7 @@
 		"FileBrowser",
 		"Fold Python Docstrings",
 		"GitGutter",
+		"Goto Tab",
 		"INI",
 		"Jinja2",
 		"JsMinifier",

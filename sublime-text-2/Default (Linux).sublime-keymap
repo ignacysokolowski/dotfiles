@@ -384,6 +384,10 @@
         ]
     },
     {
+        "keys": ["shift+alt+p"],
+        "command": "goto_tab"
+    },
+    {
         "keys": ["d", "d"],
         "command": "dired_delete",
         "context": [
