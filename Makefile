@@ -1,4 +1,4 @@
-install: install-vim install-sublime-text-2 install-konsole install-dotfiles
+install: install-vim install-sublime-text-2 install-konsole install-dotfiles install-vagrant-d
 
 install-vim:
 	rm -rf ~/.vim ~/.vimrc
@@ -23,3 +23,7 @@ install-dotfiles:
 	ln -s `pwd`/gitconfig ~/.gitconfig
 	ln -s `pwd`/htoprc ~/.htoprc
 
+install-vagrant-d:
+	rm -rf ~/.vagrant.d/Vagrantfile
+	mkdir -p ~/.vagrant.d
+	ln -s `pwd`/vagrant.d/Vagrantfile ~/.vagrant.d/Vagrantfile
