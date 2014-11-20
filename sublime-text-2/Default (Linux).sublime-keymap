@@ -242,6 +242,17 @@
         ]
     },
     {
+        "keys": ["g", "-"],
+        "command": "fold_by_level",
+        "args": {
+            "level": 2
+        }
+    },
+    {
+        "keys": ["g", "+"],
+        "command": "unfold_all"
+    },
+    {
         "keys": ["ctrl+t", "ctrl+i"],
         "command": "python_auto_import",
         "context": [
