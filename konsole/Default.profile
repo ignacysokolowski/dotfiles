@@ -1,5 +1,6 @@
 [Appearance]
 ColorScheme=ignacy
+Font=Monospace,8,-1,5,50,0,0,0,0,0
 
 [General]
 Icon=utilities-terminal
