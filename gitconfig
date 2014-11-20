@@ -51,3 +51,6 @@
 
 [core]
 	excludesfile = /home/ignacy/.gitignore
+
+[push]
+	default = simple
