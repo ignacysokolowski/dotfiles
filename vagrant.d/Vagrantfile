@@ -1,0 +1,10 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+WIAMAZON_HOME = "/home/ignacy/workspace/wi-amazon/src"
+DOTFILES_PATH = "/home/projects/dotfiles"
+
+Vagrant.configure("2") do |config|
+  config.vm.synced_folder DOTFILES_PATH, "/home/vagrant/dotfiles"
+  config.vm.provision :shell, :inline => "cd ~/dotfiles; /usr/bin/make install", :privileged => false
+end
