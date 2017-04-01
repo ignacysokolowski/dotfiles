@@ -15,8 +15,9 @@ install-konsole:
 	ln -s `pwd`/konsole/Default.profile ~/.kde/share/apps/konsole/Default.profile
 
 install-dotfiles:
-	rm -rf ~/.bashrc ~/.bash_aliases ~/.bash_completion ~/.inputrc ~/.gitconfig ~/.htoprc
+	rm -rf ~/.bashrc ~/.bash ~/.bash_aliases ~/.bash_completion ~/.inputrc ~/.gitconfig ~/.htoprc
 	ln -s `pwd`/bashrc ~/.bashrc
+	ln -s `pwd`/bash ~/.bash
 	ln -s `pwd`/bash_aliases ~/.bash_aliases
 	ln -s `pwd`/bash_completion ~/.bash_completion
 	ln -s `pwd`/inputrc ~/.inputrc

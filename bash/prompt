@@ -1,0 +1,40 @@
+bash_prompt() {
+  local PS_CLEAR="\[\033[0;00m\]"
+  local ORANGE="\[\033[0;33m\]"
+  local GRAY="\[\033[0;37m\]"
+  local DARK_GRAY="\[\033[0;90m\]"
+  local GREEN="\[\033[0;32m\]"
+  local RED="\[\033[0;31m\]"
+  local RED_BG="\[\033[0;7;31m\]"
+  local PINK="\[\033[0;35m\]"
+  local CYAN="\[\033[0;36m\]"
+
+  local now=`date +%H:%M:%S`
+  local git_status=`git status -sb 2> /dev/null`
+
+  if [ "x$git_status" != x ]; then
+    local branch=`echo "$git_status" | grep '##' | sed 's!## !!' | sed 's!\.\.\..*!!'`
+    local modified=`echo "$git_status" | grep ' M ' | wc -l | xargs`
+    local untracked=`echo "$git_status" | grep '?? ' | wc -l | xargs`
+    local staged=`echo "$git_status" | grep 'M  \|A ' | wc -l | xargs`
+
+    if [ "$branch" == 'master' ]; then
+      branch="${RED_BG}MASTER${PS_CLEAR}"
+    fi
+
+    local GIT_STATUS=" ${RED}[$branch ${PINK}$staged ${GREEN}$modified ${CYAN}$untracked${RED}]"
+  fi
+
+  if [ x$VIRTUAL_ENV != x ]; then
+    local folder=`dirname "${VIRTUAL_ENV}"`
+    local env_name=`basename "$folder"`
+    local IN_VIRTUALENV="($env_name)"
+  fi
+
+  PS1="${DARK_GRAY}$now${PS_CLEAR} $IN_VIRTUALENV${ORANGE}\u${GRAY}@${ORANGE}\h${GRAY}:${GREEN}\w$GIT_STATUS${PS_CLEAR}\n${ORANGE}\$${PS_CLEAR} "
+}
+
+PROMPT_COMMAND=bash_prompt
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+export MYSQL_PS1="MySQL \u@\h:\d> "
