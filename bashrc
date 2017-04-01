@@ -103,6 +103,15 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+if [ -f ~/.bash_completion ] && ! shopt -oq posix; then
+    . ~/.bash_completion
+fi
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+if [ -f ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
+fi
 
 if [ -f ~/.ssh/sssha ]; then
   . ~/.ssh/sssha
