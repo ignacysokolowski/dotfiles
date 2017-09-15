@@ -1,0 +1,12 @@
+snippet test_
+def test_${1}(self) -> None:
+    assert ${2:0}
+endsnippet
+
+snippet Test
+class Test${1:ClassName}:
+
+    def test_${2}(self) -> None:
+		assert ${3:0}
+endsnippet
+
