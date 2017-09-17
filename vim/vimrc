@@ -1,9 +1,27 @@
 let mapleader = "\<Space>"
 
-set tabstop=2 shiftwidth=2 expandtab autoindent nowrap nu
+augroup vimrc
+  au!
+augroup END
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set nowrap nu
+set nu
+set shiftround " use multiple of shiftwidth when indenting with '<' and '>'
 set t_Co=256
 set autoread
 set ruler
+set cursorline
+set colorcolumn=80,100
+set noerrorbells novisualbell t_vb=
+set showcmd
+set backspace=indent,eol,start
+set splitbelow
+set splitright
 if $TMUX==''
   set clipboard=unnamed
 endif
@@ -13,11 +31,41 @@ filetype plugin on
 colorscheme twilight256
 
 call plug#begin()
-Plug 'python-rope/ropevim'
+Plug 'python-rope/ropevim', {'for': 'python'}
 Plug 'ervandew/supertab'
+Plug 'vim-airline/vim-airline'
+Plug 'wellle/targets.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'Vimjas/vim-python-pep8-indent', {'for': 'python'}
+Plug 'jszakmeister/vim-togglecursor'  " change cursor shape when entering insert mode
+Plug 'endel/vim-github-colorscheme'
+Plug 'xolox/vim-misc'
+
+Plug 'xolox/vim-session'
+let g:session_autosave = 'yes'
+nnoremap <leader>s :OpenSession<CR>
+nnoremap <leader>S :OpenSession 
+
+Plug 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_guide_size = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=234 guibg=#1C1C1C
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234 guibg=#1C1C1C
+
+Plug 'yuttie/comfortable-motion.vim'
+let g:indent_guides_auto_colors = 0
+let g:comfortable_motion_scroll_down_key = "j"
+let g:comfortable_motion_scroll_up_key = "k"
+
+Plug 'machakann/vim-highlightedyank'
+map y <Plug>(highlightedyank)
+
+Plug 'majutsushi/tagbar', {'on': 'Tagbar'}
+map <leader>\ :Tagbar<CR>
+let g:tagbar_autofocus = 1
 
 Plug 'ctrlpvim/ctrlp.vim'
-
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 if has('python') ||  has('python3')
   " Faster and more accurate fuzzy-matching
@@ -27,15 +75,16 @@ endif
 let g:ctrlp_funky_syntax_highlight = 1
 let g:ctrlp_working_path_mode = 'r'
 
-Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
 let g:jedi#smart_auto_mappings = 0
 
 Plug 'scrooloose/nerdtree'
-nnoremap gf :NERDTreeToggle<CR>
+nnoremap gf :NERDTreeFind<CR>
 
-Plug 'w0rp/ale'
+Plug 'w0rp/ale', {'for': 'python'}
 nmap <silent> [s <Plug>(ale_previous_wrap)
 nmap <silent> ]s <Plug>(ale_next_wrap)
+nmap <leader>; :lopen<CR>
 let g:ale_linters = {}
 let g:ale_linters.python = ['flake8', 'mypy']
 let g:ale_python_flake8_executable = '/bin/sh -c "cd $(dirname %) && flake8"'
@@ -44,6 +93,7 @@ let g:ale_python_flake8_args = "--ignore=E501,I201"
 Plug 'benmills/vimux'
 noremap <leader>t :VimuxRunCommand("test_ " . bufname("%"))<CR>
 noremap <leader>T :VimuxRunLastCommand<CR>
+let g:VimuxRunnerType = "window"
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -70,5 +120,19 @@ noremap <silent> <leader>V :source ~/.vimrc<cr>
 nnoremap gb :buffers<CR>:buffer<Space>
 nnoremap gt :b#<CR>
 nnoremap gT :b#<CR>
+map <leader>a ggVG
+nnoremap S i<CR><Esc>
+inoremap jj <Esc>
+cnoremap <C-j> <Down>
+cnoremap <C-k> <Up>
+map <c-h> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+map <leader>F :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
 
 syntax on
+
+hi ColorColumn ctermbg=235 guibg=#1C1C1C
+hi cursorline ctermfg=none ctermbg=234 cterm=none guibg=#222222
+hi LineNr ctermfg=8 ctermbg=none cterm=none guifg=#555555
+hi VertSplit guifg=#333333
