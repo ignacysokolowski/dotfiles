@@ -1,5 +1,8 @@
 *.pyc
 vim/.netrwhist
+vim/init.vim
+vim/plugged
+vim/sessions
 *.sublime-project
 *.sublime-workspace
 sublime-text-2/*.cache
