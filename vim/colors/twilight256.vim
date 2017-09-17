@@ -235,7 +235,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     endfun
     " }}}
 
-    call <SID>X("Normal", "ffffff", "", "")
+    call <SID>X("Normal", "ffffff", "141414", "")
 
     " highlight groups
     "call <SID>X("Cursor", "708090", "f0e68c", "")
@@ -283,6 +283,16 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("Ignore", "666666", "", "")
     "Error
     call <SID>X("Todo", "ff4500", "eeee00", "")
+
+    "Python
+    call <SID>X("PythonInclude", "CDA869", "", "none")
+    call <SID>X("PythonStatement", "F9EE98", "", "none")
+    call <SID>X("PythonFunction", "9B703F", "", "none")
+    call <SID>X("PythonClass", "9B703F", "", "none")
+    call <SID>X("PythonFunctionParameters", "7587A6", "", "none")
+    call <SID>X("PythonBuiltin", "9B859D", "", "none")
+    call <SID>X("PythonExceptions", "9B859D", "", "none")
+    call <SID>X("PythonAnnotation", "555555", "", "none")
 
     " delete functions {{{
     delf <SID>X
