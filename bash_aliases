@@ -1,23 +1,26 @@
 activate-env () {
-  source "../env$1/bin/activate"  # e.g. 'env2.7', 'env3.3'
+  local env_version=$1
 
-  # Set global variables for project paths.
-  PROJECT=`dirname $(pwd)`
-  export PROJECT
-  ENVFILE="$PROJECT/.env"
-  export ENVFILE
-  SRC="$PROJECT/src"
-  export SRC
-  APP="$SRC/$(basename $PROJECT)"
-  if [ -d $APP ]; then
-    export APP
-  else
-    unset APP
+  local project=`dirname $(pwd)`
+  local envfile="$project/.env"
+  local envdir="$project/env$env_version"  # e.g. 'env2.7', 'env3.3'
+  local src="$project/src"
+  local app="$src/$(basename $project)"
+
+  if [ -d $envdir ]; then
+    source "$envdir/bin/activate"
+  fi
+
+  export PROJECT=$project
+  export ENVFILE=$envfile
+  export SRC=$src
+  if [ -d $app ]; then
+    export APP=$app
   fi
 
   # Source project's custom environment file.
-  if [ -f $ENVFILE ]; then
-    source $ENVFILE
+  if [ -f $envfile ]; then
+    source $envfile
   fi
 
   base-deactivate-env () {
@@ -36,28 +39,51 @@ activate-env () {
     fi
   }
 
-  alias deactivate='base-deactivate-env; deactivate' 
+  if [ `type -t deactivate`"" == 'function' ]; then
+    alias deactivate='base-deactivate-env; deactivate'
+  else
+    alias deactivate='base-deactivate-env'
+  fi
 }
 
 workspace () {
-  cd $HOME/workspace/$1/src
+  local name=$1
+  cd $HOME/workspace/$name/src &&
   activate-env
 }
 
 mkproject () {
+  local OPTIND
+  local name
+  local python_executable=python3.6
+  local github_url
+
+  while getopts "p:g:" option; do
+    case "$option" in
+      p) python_executable=$OPTARG
+        ;;
+      g) github_url=$OPTARG
+        ;;
+    esac
+  done
+
+  shift $((OPTIND-1))
+
+  name=$1
+
   cd $HOME/workspace
-  mkd $1
-  if [ $2 ]; then
-    virtualenv env -p $2
+  mkd $name
+  virtualenv env -p $python_executable
+  if [ $github_url ]; then
+    git clone $github_url src && cd src
   else
-    virtualenv env
+    mkd src
   fi
-  mkd src
   activate-env
 }
 
 ovpn () {
-  sudo openvpn --config $HOME/.ovpn/$1/conf.ovpn --cd $HOME/.ovpn/$1/ --daemon openvpn-$1
+  sudo /usr/local/sbin/openvpn --config $HOME/.ovpn/$1/conf.ovpn --cd $HOME/.ovpn/$1/ --daemon openvpn-$1 --log-append $HOME/.ovpn/$1/openvpn.log
 }
 
 # Create a new directory and enter it.
@@ -65,22 +91,7 @@ function mkd() {
   mkdir -p "$@" && cd "$@"
 }
 
-# Run PyTest with coverage and linting on specified application part.
-#
-# Useful shortcut when you're working at one class/function/module and you
-# don't want to run all your tests and need to measure coverage only for what
-# you're currently testing.
-#
-# Example::
-#
-#     $ test_part tests/test_views.py app/views.py -vsk LoginView
-#
-# 1st param: file or directory with tests to run
-# 2nd param: path to measure coverage for
-# Any additional params will be added as py.test params
-test_part () {
-  py.test --cov $2 --cov-report term-missing --cov-report html --pep8 --flakes $1 ${@:3}
-}
-
+alias ls='ls -G'
 alias pysmtp='sudo python -m smtpd -n -c DebuggingServer localhost:25'
 alias :q='exit'
+alias mvim='reattach-to-user-namespace open -a MacVim'
