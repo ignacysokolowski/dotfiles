@@ -10,3 +10,114 @@ class Test${1:ClassName}:
 		assert ${3:0}
 endsnippet
 
+snippet setup_method
+def setup_method(self) -> None:
+    pass
+endsnippet
+
+snippet eq
+def __eq__(self, other: object) -> bool:
+    return True
+endsnippet
+
+snippet eq_nimp
+if not isinstance(other, self.__class__):
+    return NotImplemented
+endsnippet
+
+snippet mypyini
+[mypy]
+ignore_missing_imports=1
+disallow_untyped_defs=1
+endsnippet
+
+snippet aeq
+self.assertEqual(${1}, ${2})
+endsnippet
+
+snippet pyenv
+deactivate-env () {
+  unalias test_ 2> /dev/null
+}
+
+alias test_='py.test --tb=short --continue-on-collection-errors'
+endsnippet
+
+snippet pygitignore
+# Python compiled files
+__pycache__
+*.pyc
+
+# Python packages
+*.egg-info
+dist
+build
+
+# Tests
+.cache
+.coverage
+htmlcov
+endsnippet
+
+snippet pytestsetup
+@pytest.fixture(autouse=True)
+def setUp(self) -> None:
+    ${1:pass}
+endsnippet
+
+snippet fixture
+@pytest.fixture
+def ${1}():
+    return ${2}
+endsnippet
+
+snippet abcm
+@abc.abstractmethod
+endsnippet
+
+snippet assert_error
+assert str(error.value) == '${1}'
+endsnippet
+
+snippet empty_init
+def __init__(self) -> None:
+    ${1:pass}
+endsnippet
+
+snippet Exc
+class ${1}(Exception):
+    pass
+endsnippet
+
+snippet araises
+with self.assertRaises(${1:Exception}):
+    ${2}
+endsnippet
+
+snippet UTest
+class Test${1:ClassName}(unittest.TestCase):
+
+    def test_${2}(self${3}) -> None:
+        assert ${4:0}
+endsnippet
+
+snippet repr
+def __repr__(self) -> str:
+    return (
+        f'{self.__class__.__name__}'
+        f'(${1:param}={self._${2:attr}!r})'
+    )
+endsnippet
+
+snippet setup.py
+from setuptools import find_packages
+from setuptools import setup
+
+setup(
+    name='${1}',
+    version='${2:1.0.0}',
+    packages=find_packages(include=('${3}*',)),
+    include_package_data=True,
+    zip_safe=False,
+)
+endsnippet
