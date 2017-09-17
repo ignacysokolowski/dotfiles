@@ -78,6 +78,7 @@ let g:ctrlp_working_path_mode = 'r'
 
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 let g:jedi#smart_auto_mappings = 0
+let g:jedi#usages_command = '<leader>u'
 
 Plug 'scrooloose/nerdtree'
 nnoremap gf :NERDTreeFind<CR>
