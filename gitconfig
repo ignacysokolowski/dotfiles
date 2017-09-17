@@ -20,6 +20,7 @@
   st = status
   s = status -sb
   ci = commit
+  ca = commit --amend
   co = checkout
   br = branch
   brc = !git branch | grep '*' | sed 's!* !!'
@@ -28,12 +29,16 @@
   brm-refactoring = !git br -m $(git brc) $(git brc | sed 's!wip/!refactoring/!')
   pl = pull --rebase
   ps = push
+  psf = !git ps -f origin $(git brc)
   dc = diff --cached
+  dcm = diff --cached -M -C -D
+  dm = diff -M -C -D
   rh = reset --hard
   r = rebase
   ri = rebase --interactive --autosquash
   rs = rebase --skip
   rc = rebase --continue
+  ra = rebase --abort
   fixup = !sh -c 'git commit --fixup=HEAD && git rebase --interactive --autosquash HEAD~2'
   fixup-commit = commit --fixup=HEAD
   l = log --pretty=format:'%C(yellow)%h %Cred%ai %Cgreen%an %Creset%s'
@@ -41,6 +46,8 @@
   lg = log --graph --pretty=format:'%C(yellow)%h %Cred%ai %Cgreen%an %C(yellow bold)%d %Creset%s'
   glog = log --graph --decorate --pretty=oneline --abbrev-commit --all
   mylog = log --pretty=format:'%C(yellow)%h %Cred%ai %Creset%s' --author=Ignacy --no-merges
+  la = log --pretty=format:'%Cgreen%an: %Creset%s'
+  sh = show -p --stat
 
   ff = flow feature
   ffs = flow feature start
@@ -50,7 +57,8 @@
   fhf = flow hotfix finish
 
 [core]
-	excludesfile = /home/ignacy/.gitignore
+  excludesfile = ~/.gitignore
+  pager = less -S
 
 [push]
 	default = simple
