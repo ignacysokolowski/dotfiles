@@ -4,3 +4,4 @@ set keymap vi-insert
 "\C-j": next-history
 "\C-k": previous-history
 "\C-l": clear-screen
+"jj": vi-movement-mode
