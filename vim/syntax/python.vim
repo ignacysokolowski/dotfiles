@@ -77,8 +77,8 @@ set cpo&vim
 "   built-in below (use 'from __future__ import print_function' in 2)
 " - async and await were added in Python 3.5 and are soft keywords.
 "
-syn keyword pythonStatement	class nextgroup=pythonClass skipwhite
-syn keyword pythonStatement	def nextgroup=pythonFunction skipwhite
+syn keyword pythonClassKeyword	class nextgroup=pythonClass skipwhite
+syn keyword pythonDefKeyword	def nextgroup=pythonFunction skipwhite
 
 syn keyword pythonStatement	False, None, True
 syn keyword pythonStatement	as assert break continue del exec global
@@ -117,10 +117,16 @@ syn region pythonClassVars start="(" end=")" contained contains=pythonClassParam
 syn match  pythonClassParameters "[^,]*" contained contains=pythonExtraOperator,pythonBuiltin,pythonConstant,pythonStatement,pythonNumber,pythonString,pythonBrackets skipwhite
 
 " Function parameters
-syn match  pythonFunction "\%(\%(def\s\|class\s\|@\)\s*\)\@<=\h\%(\w\|\.\)*" contained nextgroup=pythonFunctionVars
+syn match  pythonFunction "\%(\%(def\s\|class\s\|@\)\s*\)\@<=\h\%(\w\|\.\)*" contained contains=pythonDunderMethod nextgroup=pythonFunctionVars
 syn region pythonFunctionVars start="(" end=")" contained contains=pythonFunctionParameters transparent keepend
 syn match  pythonFunctionParameters "[^,:]*" contained contains=pythonSelf,pythonAnnotation,pythonExtraOperator,pythonBuiltin,pythonConstant,pythonStatement,pythonNumber,pythonString,pythonBrackets skipwhite
 syn match  pythonAnnotation ": [^,]*" contained contains=pythonSelf,pythonExtraOperator,pythonBuiltin,pythonConstant,pythonStatement,pythonNumber,pythonString,pythonBrackets skipwhite
+syn match  pythonDunderMethod "\<__\(\w\)*__\>"
+
+syn match  pythonFunctionCallKeywordParameter "\<\(\w\)*\>=" contains=pythonAssignmentOperator
+syn match  pythonAssignmentOperator "=" contained contains=pythonExtraOperator
+
+syn match  pythonConstant "\<[A-Z_0-9]*\>"
 
 syn match   pythonComment	"#.*$" contains=pythonTodo,@Spell
 syn keyword pythonTodo		FIXME NOTE NOTES TODO XXX contained
@@ -216,6 +222,9 @@ if !exists("python_no_builtin_highlight")
   " 'False', 'True', and 'None' are also reserved words in Python 3
   syn keyword pythonBuiltin	False True None
   syn keyword pythonBuiltin	NotImplemented Ellipsis __debug__
+
+  syn keyword pythonBuiltinConstant	False True None
+  syn keyword pythonBuiltinConstant	NotImplemented Ellipsis __debug__
   " built-in functions
   syn keyword pythonBuiltin	abs all any bin bool bytearray callable chr
   syn keyword pythonBuiltin	classmethod compile complex delattr dict dir
@@ -322,6 +331,8 @@ if version >= 508 || !exists("did_python_syn_inits")
 
   " The default highlight links.  Can be overridden later.
   HiLink pythonStatement	Statement
+  HiLink pythonClassKeyword	Statement
+  HiLink pythonDefKeyword	Statement
   HiLink pythonConditional	Conditional
   HiLink pythonRepeat		Repeat
   HiLink pythonOperator		Operator
@@ -336,10 +347,13 @@ if version >= 508 || !exists("did_python_syn_inits")
   HiLink pythonQuotes		String
   HiLink pythonTripleQuotes	pythonQuotes
   HiLink pythonEscape		Special
+  HiLink pythonConstant		Constant
+  HiLink pythonBuiltinConstant		Constant
 
   " Classes, Functions
   HiLink pythonClass    Type
   HiLink pythonFunction Function
+  HiLink pythonDunderMethod	Statement
 
   if !exists("python_no_number_highlight")
     HiLink pythonNumber		Number

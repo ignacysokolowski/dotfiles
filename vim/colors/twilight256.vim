@@ -274,7 +274,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("Identifier", "7587A6", "", "none")
     call <SID>X("Function", "9B703F", "", "")
     call <SID>X("Define", "CDA869", "", "none")
-    call <SID>X("Statement", "CDA869", "", "")
+    call <SID>X("Statement", "CDA869", "", "none")
     call <SID>X("String", "8F9D6A", "", "")
     call <SID>X("PreProc", "AFC4DB", "", "")
     call <SID>X("Type", "F9EE98", "", "")
@@ -286,13 +286,16 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
     "Python
     call <SID>X("PythonInclude", "CDA869", "", "none")
-    call <SID>X("PythonStatement", "F9EE98", "", "none")
     call <SID>X("PythonFunction", "9B703F", "", "none")
+    call <SID>X("PythonDunderMethod", "F9EE98", "", "none")
+    call <SID>X("PythonClassKeyword", "F9EE98", "", "none")
+    call <SID>X("PythonDefKeyword", "F9EE98", "", "none")
     call <SID>X("PythonClass", "9B703F", "", "none")
     call <SID>X("PythonFunctionParameters", "7587A6", "", "none")
+    call <SID>X("pythonFunctionCallKeywordParameter", "7587A6", "", "none")
     call <SID>X("PythonBuiltin", "9B859D", "", "none")
     call <SID>X("PythonExceptions", "9B859D", "", "none")
-    call <SID>X("PythonAnnotation", "555555", "", "none")
+    call <SID>X("PythonAnnotation", "666666", "", "none")
 
     " delete functions {{{
     delf <SID>X
