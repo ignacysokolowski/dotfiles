@@ -120,8 +120,6 @@ noremap P P`[
 nmap <leader>, :e ~/.vimrc<CR>
 noremap <silent> <leader>V :source ~/.vimrc<cr>
 nnoremap gb :buffers<CR>:buffer<Space>
-nnoremap gt :b#<CR>
-nnoremap gT :b#<CR>
 map <leader>a ggVG
 nnoremap S i<CR><Esc>
 inoremap jj <Esc>
