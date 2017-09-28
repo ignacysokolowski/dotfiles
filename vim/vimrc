@@ -4,28 +4,53 @@ augroup vimrc
   au!
 augroup END
 
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set autoindent
 set nowrap nu
 set nu
+set relativenumber
 set shiftround " use multiple of shiftwidth when indenting with '<' and '>'
 set t_Co=256
 set autoread
 set ruler
 set cursorline
-set colorcolumn=80,100
 set noerrorbells novisualbell t_vb=
 set showcmd
 set backspace=indent,eol,start
 set splitbelow
 set splitright
+set hidden
+set incsearch
+set timeoutlen=2000
 set undofile undodir=~/.vim/undo
+set nostartofline
+set foldmethod=indent
+set foldlevelstart=20
+set foldopen-=block
 if $TMUX==''
   set clipboard=unnamed
 endif
+if has("gui_macvim")
+  set transparency=10
+  set blurradius=10
+endif
+
+augroup python
+  au!
+  autocmd FileType python setlocal tabstop=4
+  autocmd FileType python setlocal softtabstop=4
+  autocmd FileType python setlocal shiftwidth=4
+  autocmd FileType python setlocal colorcolumn=80,100
+  autocmd FileType python setlocal foldnestmax=2
+augroup END
+
+augroup gitcommit
+  au!
+  autocmd FileType gitcommit setlocal colorcolumn=72
+augroup END
 
 filetype plugin indent on
 filetype plugin on
@@ -40,6 +65,15 @@ Plug 'Vimjas/vim-python-pep8-indent', {'for': 'python'}
 Plug 'jszakmeister/vim-togglecursor'  " change cursor shape when entering insert mode
 Plug 'endel/vim-github-colorscheme'
 Plug 'xolox/vim-misc'
+Plug 'michaeljsmith/vim-indent-object'
+
+Plug 'mileszs/ack.vim'
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+Plug 'fisadev/vim-isort'
+let g:vim_isort_map = '<C-i>'
 
 Plug 'xolox/vim-session'
 let g:session_autosave = 'yes'
@@ -57,9 +91,11 @@ Plug 'yuttie/comfortable-motion.vim'
 let g:indent_guides_auto_colors = 0
 let g:comfortable_motion_scroll_down_key = "j"
 let g:comfortable_motion_scroll_up_key = "k"
+let g:comfortable_motion_friction = 120
 
 Plug 'machakann/vim-highlightedyank'
 map y <Plug>(highlightedyank)
+let g:highlightedyank_highlight_duration = 300
 
 Plug 'majutsushi/tagbar', {'on': 'Tagbar'}
 map <leader>\ :Tagbar<CR>
@@ -74,6 +110,8 @@ if has('python') ||  has('python3')
 endif
 let g:ctrlp_funky_syntax_highlight = 1
 let g:ctrlp_working_path_mode = 'r'
+nmap <leader>b :CtrlPBuffer<CR>
+nmap <leader>m :CtrlPMRUFiles<CR>
 
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 let g:jedi#smart_auto_mappings = 0
@@ -92,12 +130,11 @@ let g:ale_python_flake8_executable = '/bin/sh -c "cd $(dirname %) && flake8"'
 let g:ale_python_flake8_args = "--ignore=E501,I201"
 
 Plug 'benmills/vimux'
-noremap <leader>t :VimuxRunCommand("test_ " . bufname("%"))<CR>
-noremap <leader>T :VimuxRunLastCommand<CR>
 let g:VimuxRunnerType = "window"
+noremap <leader>T :VimuxRunCommand("test_ " . bufname("%"))<CR>
+noremap <leader>t :VimuxRunLastCommand<CR>
 
 Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
@@ -127,7 +164,10 @@ cnoremap <C-k> <Up>
 map <c-h> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-map <leader>F :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+map <leader>F :execute ":Ack " . expand("<cword>")<CR>
+nmap <leader>C :silent "!ctags -R ."<CR>
+
+:command! Co w | %bd | e#
 
 syntax on
 
@@ -135,3 +175,11 @@ hi ColorColumn ctermbg=235 guibg=#1C1C1C
 hi cursorline ctermfg=none ctermbg=234 cterm=none guibg=#222222
 hi LineNr ctermfg=8 ctermbg=none cterm=none guifg=#555555
 hi VertSplit guifg=#333333
+hi Visual guifg=#000000 guibg=#555555 gui=none
+hi HighlightedyankRegion guifg=#000000 guibg=#555555 cterm=reverse gui=none
+hi NonText ctermfg=8 guifg=#555555
+hi Pmenu guibg=#333333 guifg=#DDDDDD
+hi PmenuSel guibg=#CCCCCC guifg=#333333
+hi Directory guifg=#7587A6 ctermfg=blue
+hi TagBarScope guifg=#7587A6 ctermfg=blue
+hi Folded guibg=#292929 guifg=#999999
