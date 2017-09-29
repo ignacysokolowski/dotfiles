@@ -95,3 +95,6 @@ alias ls='ls -G'
 alias pysmtp='sudo python -m smtpd -n -c DebuggingServer localhost:25'
 alias :q='exit'
 alias mvim='reattach-to-user-namespace open -a MacVim'
+alias rmpycache="find . -depth -name '__pycache__' -exec rm -rf '{}' \;"
+alias rmpyc='find . -name '\''*.pyc'\'' -delete && rmpycache'
+alias find-empty-dirs="find . -regex '\.\/[^.].*' -type d -empty -print"
