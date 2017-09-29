@@ -9,7 +9,7 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set autoindent
-set nowrap nu
+set nowrap
 set nu
 set relativenumber
 set shiftround " use multiple of shiftwidth when indenting with '<' and '>'
