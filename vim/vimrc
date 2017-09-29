@@ -151,7 +151,6 @@ call plug#end()
 
 let g:python_highlight_all = 1
 
-vmap g, :'<,'>s/\, /\,\n        /g<CR>
 noremap P P`[
 nmap <leader>, :e ~/.vimrc<CR>
 noremap <silent> <leader>V :source ~/.vimrc<cr>
