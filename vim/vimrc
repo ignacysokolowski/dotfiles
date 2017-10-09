@@ -154,7 +154,8 @@ let g:python_highlight_all = 1
 noremap P P`[
 nmap <leader>, :e ~/.vimrc<CR>
 noremap <silent> <leader>V :source ~/.vimrc<cr>
-nnoremap gb :buffers<CR>:buffer<Space>
+nnoremap gb :bn<CR>
+nnoremap gB :bp<CR>
 map <leader>a ggVG
 nnoremap S i<CR><Esc>
 inoremap jj <Esc>
