@@ -4,6 +4,13 @@ def test_${1}(self) -> None:
 endsnippet
 
 snippet Test
+class ${1:ClassName}Test(unittest.TestCase):
+
+    def test_${2}(self) -> None:
+		assert ${3:0}
+endsnippet
+
+snippet PyTest
 class Test${1:ClassName}:
 
     def test_${2}(self) -> None:
