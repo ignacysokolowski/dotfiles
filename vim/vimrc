@@ -181,5 +181,6 @@ hi NonText ctermfg=8 guifg=#555555
 hi Pmenu guibg=#333333 guifg=#DDDDDD
 hi PmenuSel guibg=#CCCCCC guifg=#333333
 hi Directory guifg=#7587A6 ctermfg=blue
+hi NERDTreeExecFile guifg=#CF6A4C ctermfg=red
 hi TagBarScope guifg=#7587A6 ctermfg=blue
 hi Folded guibg=#292929 guifg=#999999
