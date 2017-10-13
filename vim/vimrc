@@ -27,6 +27,7 @@ set incsearch
 set timeoutlen=2000
 set lazyredraw
 set undofile undodir=~/.vim/undo
+set noswapfile
 set nostartofline
 set foldmethod=indent
 set foldlevelstart=20
