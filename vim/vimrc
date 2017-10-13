@@ -68,6 +68,7 @@ Plug 'jszakmeister/vim-togglecursor'  " change cursor shape when entering insert
 Plug 'endel/vim-github-colorscheme'
 Plug 'xolox/vim-misc'
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'thanthese/Tortoise-Typing'
 Plug 'Valloric/YouCompleteMe'
 
 Plug 'mileszs/ack.vim'
