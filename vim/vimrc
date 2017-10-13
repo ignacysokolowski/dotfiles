@@ -139,7 +139,7 @@ noremap <leader>T :VimuxRunCommand("test_ " . bufname("%"))<CR>
 noremap <leader>t :VimuxRunLastCommand<CR>
 
 Plug 'SirVer/ultisnips'
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
