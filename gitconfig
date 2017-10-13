@@ -5,6 +5,9 @@
 [color]
   ui = auto
 
+[tig "color"]
+  cursor = black green
+
 [color "diff"]
   meta = yellow bold
   frag = magenta bold
