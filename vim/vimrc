@@ -75,6 +75,7 @@ Plug 'mileszs/ack.vim'
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+nmap <leader>A :Ack 
 
 Plug 'fisadev/vim-isort'
 let g:vim_isort_map = '<C-i>'
