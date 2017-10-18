@@ -56,10 +56,10 @@ augroup END
 
 filetype plugin indent on
 filetype plugin on
-colorscheme twilight256
 
 call plug#begin()
 Plug 'ignacysokolowski/python-syntax'
+Plug 'ignacysokolowski/twilight256.vim'
 Plug 'ervandew/supertab'
 Plug 'vim-airline/vim-airline'
 Plug 'wellle/targets.vim'
@@ -154,6 +154,8 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 call plug#end()
+
+colorscheme twilight256
 
 let g:python_highlight_all = 1
 
