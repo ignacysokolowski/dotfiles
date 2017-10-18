@@ -59,6 +59,7 @@ filetype plugin on
 colorscheme twilight256
 
 call plug#begin()
+Plug 'ignacysokolowski/python-syntax'
 Plug 'ervandew/supertab'
 Plug 'vim-airline/vim-airline'
 Plug 'wellle/targets.vim'
