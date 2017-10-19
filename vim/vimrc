@@ -39,6 +39,7 @@ if has("gui_macvim")
   set transparency=10
   set blurradius=10
   set guioptions=
+  set guifont=DejaVu\ Sans\ Mono:h10
 endif
 
 augroup python
