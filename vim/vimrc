@@ -182,7 +182,7 @@ nmap gm yiwF.b<leader>d/^$<CR>odef <Esc>pA(self) -> None:<CR>pass<CR><Esc>k_
 
 syntax on
 
-hi ColorColumn ctermbg=235 guibg=#1C1C1C
+hi ColorColumn ctermbg=233 guibg=#1C1C1C
 hi cursorline ctermfg=none ctermbg=234 cterm=none guibg=#222222
 hi LineNr ctermfg=8 ctermbg=none cterm=none guifg=#555555
 hi VertSplit guifg=#333333
