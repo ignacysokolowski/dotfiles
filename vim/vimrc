@@ -194,4 +194,4 @@ hi PmenuSel guibg=#CCCCCC guifg=#333333
 hi Directory guifg=#7587A6 ctermfg=blue
 hi NERDTreeExecFile guifg=#CF6A4C ctermfg=red
 hi TagBarScope guifg=#7587A6 ctermfg=blue
-hi Folded guibg=#292929 guifg=#999999
+hi Folded ctermbg=236 ctermfg=247 guibg=#292929 guifg=#999999
