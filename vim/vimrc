@@ -76,7 +76,8 @@ Plug 'mileszs/ack.vim'
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
-nmap <leader>A :Ack 
+nmap <leader>A :Ack! 
+map <leader>F :execute ":Ack! " . expand("<cword>")<CR>
 
 Plug 'fisadev/vim-isort'
 let g:vim_isort_map = '<C-i>'
@@ -172,7 +173,6 @@ cnoremap <C-k> <Up>
 map <c-h> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-map <leader>F :execute ":Ack " . expand("<cword>")<CR>
 nmap <leader>C :silent "!ctags -R ."<CR>
 
 :command! Co w | %bd | e#
