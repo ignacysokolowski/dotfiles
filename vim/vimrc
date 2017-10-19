@@ -125,6 +125,7 @@ let g:jedi#smart_auto_mappings = 0
 let g:jedi#usages_command = '<leader>u'
 
 Plug 'scrooloose/nerdtree'
+let NERDTreeIgnore=['__pycache__', '\~$']
 nnoremap gf :NERDTreeFind<CR>
 
 Plug 'w0rp/ale', {'for': 'python'}
