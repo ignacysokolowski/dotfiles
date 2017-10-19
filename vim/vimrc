@@ -185,7 +185,7 @@ syntax on
 hi ColorColumn ctermbg=233 guibg=#1C1C1C
 hi cursorline ctermfg=none ctermbg=234 cterm=none guibg=#222222
 hi LineNr ctermfg=8 ctermbg=none cterm=none guifg=#555555
-hi VertSplit guifg=#333333
+hi VertSplit ctermfg=235 guifg=#333333
 hi Visual guifg=#000000 guibg=#555555 gui=none
 hi HighlightedyankRegion guifg=#000000 guibg=#555555 cterm=reverse gui=none
 hi NonText ctermfg=8 guifg=#555555
