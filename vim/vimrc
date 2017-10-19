@@ -38,6 +38,7 @@ endif
 if has("gui_macvim")
   set transparency=10
   set blurradius=10
+  set guioptions=
 endif
 
 augroup python
