@@ -175,6 +175,7 @@ map <c-h> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 nmap <leader>C :silent "!ctags -R ."<CR>
+nnoremap <leader>R "zyiw:bufdo %s/<C-r>z/<C-r>z/ge \| update<C-f>5b
 
 :command! Co w | %bd | e#
 
