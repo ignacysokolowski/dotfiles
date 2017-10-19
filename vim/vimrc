@@ -189,8 +189,8 @@ hi VertSplit ctermfg=235 guifg=#333333
 hi Visual ctermfg=8 ctermbg=0 guifg=#000000 guibg=#555555 gui=none
 hi HighlightedyankRegion guifg=#000000 guibg=#555555 cterm=reverse gui=none
 hi NonText ctermfg=8 guifg=#555555
-hi Pmenu guibg=#333333 guifg=#DDDDDD
-hi PmenuSel guibg=#CCCCCC guifg=#333333
+hi Pmenu ctermfg=253 ctermbg=238 guibg=#333333 guifg=#DDDDDD
+hi PmenuSel ctermfg=235 ctermbg=249 guibg=#CCCCCC guifg=#333333
 hi Directory guifg=#7587A6 ctermfg=blue
 hi NERDTreeExecFile guifg=#CF6A4C ctermfg=red
 hi TagBarScope guifg=#7587A6 ctermfg=blue
