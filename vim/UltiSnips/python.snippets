@@ -1,77 +1,77 @@
-snippet test_
+snippet test_ "" b
 def test_${1}(self) -> None:
     assert ${2:0}
 endsnippet
 
-snippet Test
+snippet Test "" b
 class ${1:ClassName}Test(unittest.TestCase):
 
     def test_${2}(self) -> None:
 		assert ${3:0}
 endsnippet
 
-snippet PyTest
+snippet PyTest "" b
 class Test${1:ClassName}:
 
     def test_${2}(self) -> None:
 		assert ${3:0}
 endsnippet
 
-snippet setup_method
+snippet setup_method "" b
 def setup_method(self) -> None:
     pass
 endsnippet
 
-snippet eq
+snippet eq "" b
 def __eq__(self, other: object) -> bool:
     return True
 endsnippet
 
-snippet eq_nimp
+snippet eq_nimp "" b
 if not isinstance(other, self.__class__):
     return NotImplemented
 endsnippet
 
-snippet aeq
+snippet aeq "" b
 self.assertEqual(${1}, ${2})
 endsnippet
 
-snippet pytestsetup
+snippet pytestsetup "" b
 @pytest.fixture(autouse=True)
 def setUp(self) -> None:
     ${1:pass}
 endsnippet
 
-snippet fixture
+snippet fixture "" b
 @pytest.fixture
 def ${1}():
     return ${2}
 endsnippet
 
-snippet abcm
+snippet abcm "" b
 @abc.abstractmethod
 endsnippet
 
-snippet assert_error
+snippet assert_error "" b
 assert str(error.value) == '${1}'
 endsnippet
 
-snippet empty_init
+snippet empty_init b
 def __init__(self) -> None:
     ${1:pass}
 endsnippet
 
-snippet Exc
+snippet Exc "" b
 class ${1}(Exception):
     pass
 endsnippet
 
-snippet araises
+snippet araises "" b
 with self.assertRaises(${1:Exception}):
     ${2}
 endsnippet
 
-snippet repr
+snippet repr "" b
 def __repr__(self) -> str:
     return (
         f'{self.__class__.__name__}'
