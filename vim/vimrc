@@ -186,6 +186,7 @@ map <c-h> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 nmap <leader>C :silent "!ctags -R ."<CR>
 nnoremap <leader>R "zyiw:bufdo %s/<C-r>z/<C-r>z/ge \| update<C-f>5b
 nmap gm yiwF.b<leader>d/^$<CR>odef <Esc>pA(self) -> None:<CR>pass<CR><Esc>k_
+vmap S :s/\((\\|{\\|\[\)/\0\r/g <bar> s/\()\\|}\\|]\)/,\r\0/g <bar> .-1s/, /,\r/ge<CR>
 
 :command! Co w | %bd | e#
 
