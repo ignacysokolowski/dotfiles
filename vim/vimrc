@@ -123,6 +123,7 @@ if has('python') ||  has('python3')
 endif
 let g:ctrlp_funky_syntax_highlight = 1
 let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_prompt_mappings = { 'PrtClearCache()': ['<c-r>'] }
 nmap <leader>m :CtrlPMRUFiles<CR>
 nmap <leader>c :CtrlPTag<CR>
 nmap <leader>l :CtrlPBufTag<CR>
