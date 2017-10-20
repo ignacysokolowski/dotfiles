@@ -115,6 +115,7 @@ let g:tagbar_autofocus = 1
 
 Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_extensions = ['tag', 'buffertag']
 if has('python') ||  has('python3')
   " Faster and more accurate fuzzy-matching
   Plug 'felikz/ctrlp-py-matcher'
@@ -123,6 +124,8 @@ endif
 let g:ctrlp_funky_syntax_highlight = 1
 let g:ctrlp_working_path_mode = 'r'
 nmap <leader>m :CtrlPMRUFiles<CR>
+nmap <leader>c :CtrlPTag<CR>
+nmap <leader>l :CtrlPBufTag<CR>
 
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 let g:jedi#smart_auto_mappings = 0
