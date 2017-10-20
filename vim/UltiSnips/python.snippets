@@ -71,13 +71,6 @@ with self.assertRaises(${1:Exception}):
     ${2}
 endsnippet
 
-snippet UTest
-class Test${1:ClassName}(unittest.TestCase):
-
-    def test_${2}(self${3}) -> None:
-        assert ${4:0}
-endsnippet
-
 snippet repr
 def __repr__(self) -> str:
     return (
