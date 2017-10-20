@@ -43,20 +43,6 @@ if has("gui_macvim")
   set guifont=DejaVu\ Sans\ Mono:h10
 endif
 
-augroup python
-  au!
-  autocmd FileType python setlocal tabstop=4
-  autocmd FileType python setlocal softtabstop=4
-  autocmd FileType python setlocal shiftwidth=4
-  autocmd FileType python setlocal colorcolumn=80,100
-  autocmd FileType python setlocal foldnestmax=2
-augroup END
-
-augroup gitcommit
-  au!
-  autocmd FileType gitcommit setlocal colorcolumn=72
-augroup END
-
 filetype plugin indent on
 filetype plugin on
 
@@ -185,7 +171,6 @@ map <c-h> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 nmap <leader>C :silent "!ctags -R ."<CR>
 nnoremap <leader>R "zyiw:bufdo %s/<C-r>z/<C-r>z/ge \| update<C-f>5b
-nmap gm yiwF.b<leader>d/^$<CR>odef <Esc>pA(self) -> None:<CR>pass<CR><Esc>k_
 vmap S :s/\((\\|{\\|\[\)/\0\r/g <bar> s/\()\\|}\\|]\)/,\r\0/g <bar> .-1s/, /,\r/ge<CR>
 
 :command! Co w | %bd | e#
