@@ -32,7 +32,6 @@ set nostartofline
 set foldmethod=indent
 set foldlevelstart=20
 set foldopen-=block
-let g:session_autoload = 'no'
 if $TMUX==''
   set clipboard=unnamed
 endif
@@ -60,7 +59,6 @@ Plug 'xolox/vim-misc'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'thanthese/Tortoise-Typing'
 Plug 'Valloric/YouCompleteMe'
-
 Plug 'bkad/CamelCaseMotion'
 
 Plug 'mileszs/ack.vim'
@@ -75,6 +73,7 @@ let g:vim_isort_map = '<C-i>'
 
 Plug 'xolox/vim-session'
 let g:session_autosave = 'yes'
+let g:session_autoload = 'no'
 nnoremap <leader>s :OpenSession<CR>
 nnoremap <leader>S :OpenSession 
 
@@ -86,18 +85,17 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=234 guibg=#1C1C1C
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234 guibg=#1C1C1C
 
 Plug 'yuttie/comfortable-motion.vim'
-let g:indent_guides_auto_colors = 0
 let g:comfortable_motion_scroll_down_key = "j"
 let g:comfortable_motion_scroll_up_key = "k"
 let g:comfortable_motion_friction = 120
 
 Plug 'machakann/vim-highlightedyank'
-map y <Plug>(highlightedyank)
 let g:highlightedyank_highlight_duration = 300
+map y <Plug>(highlightedyank)
 
 Plug 'majutsushi/tagbar', {'on': 'Tagbar'}
-map <leader>\ :Tagbar<CR>
 let g:tagbar_autofocus = 1
+map <leader>\ :Tagbar<CR>
 
 Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
@@ -123,13 +121,13 @@ let NERDTreeIgnore=['__pycache__', '\~$']
 nnoremap gf :NERDTreeFind<CR>
 
 Plug 'w0rp/ale', {'for': 'python'}
-nmap <silent> [s <Plug>(ale_previous_wrap)
-nmap <silent> ]s <Plug>(ale_next_wrap)
-nmap <leader>; :lopen<CR>
 let g:ale_linters = {}
 let g:ale_linters.python = ['flake8', 'mypy']
 let g:ale_python_flake8_executable = '/bin/sh -c "cd $(dirname %) && flake8"'
 let g:ale_python_flake8_args = "--ignore=E501,I201"
+nmap <silent> [s <Plug>(ale_previous_wrap)
+nmap <silent> ]s <Plug>(ale_next_wrap)
+nmap <leader>; :lopen<CR>
 
 Plug 'benmills/vimux'
 let g:VimuxRunnerType = "window"
@@ -142,12 +140,12 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 Plug 'terryma/vim-multiple-cursors'
-let g:multi_cursor_use_default_mapping=0
-let g:multi_cursor_start_key='<C-n>'
-let g:multi_cursor_next_key='<C-n>'
-let g:multi_cursor_prev_key='<C-p>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
+let g:multi_cursor_use_default_mapping = 0
+let g:multi_cursor_start_key = '<C-n>'
+let g:multi_cursor_next_key = '<C-n>'
+let g:multi_cursor_prev_key = '<C-p>'
+let g:multi_cursor_skip_key = '<C-x>'
+let g:multi_cursor_quit_key = '<Esc>'
 
 call plug#end()
 
@@ -156,22 +154,25 @@ colorscheme twilight256
 call camelcasemotion#CreateMotionMappings('<leader>')
 let g:python_highlight_all = 1
 
-noremap P P`[
 nmap <leader>, :e ~/.vimrc<CR>
 noremap <silent> <leader>V :source ~/.vimrc<cr>
+noremap P P`[
 nnoremap gb :bn<CR>
 nnoremap gB :bp<CR>
 map <leader>a ggVG
 nnoremap S i<CR><Esc>
-inoremap jj <Esc>
-cnoremap <C-j> <Down>
-cnoremap <C-k> <Up>
 map <c-h> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 nmap <leader>C :silent "!ctags -R ."<CR>
 nnoremap <leader>R "zyiw:bufdo %s/<C-r>z/<C-r>z/ge \| update<C-f>5b
+
+inoremap jj <Esc>
+
 vmap S :s/\((\\|{\\|\[\)/\0\r/g <bar> s/\()\\|}\\|]\)/,\r\0/g <bar> .-1s/, /,\r/ge<CR>
+
+cnoremap <C-j> <Down>
+cnoremap <C-k> <Up>
 
 :command! Co w | %bd | e#
 
