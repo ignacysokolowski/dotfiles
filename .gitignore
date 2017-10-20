@@ -4,8 +4,3 @@ vim/init.vim
 vim/plugged
 vim/sessions
 vim/undo
-*.sublime-project
-*.sublime-workspace
-sublime-text-2/*.cache
-sublime-text-2/Package Control.last-run
-sublime-text-2/Side Bar.sublime-settings
