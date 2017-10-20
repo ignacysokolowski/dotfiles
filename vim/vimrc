@@ -75,6 +75,8 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'thanthese/Tortoise-Typing'
 Plug 'Valloric/YouCompleteMe'
 
+Plug 'bkad/CamelCaseMotion'
+
 Plug 'mileszs/ack.vim'
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
@@ -120,7 +122,6 @@ if has('python') ||  has('python3')
 endif
 let g:ctrlp_funky_syntax_highlight = 1
 let g:ctrlp_working_path_mode = 'r'
-nmap <leader>b :CtrlPBuffer<CR>
 nmap <leader>m :CtrlPMRUFiles<CR>
 
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
@@ -162,6 +163,7 @@ call plug#end()
 
 colorscheme twilight256
 
+call camelcasemotion#CreateMotionMappings('<leader>')
 let g:python_highlight_all = 1
 
 noremap P P`[
