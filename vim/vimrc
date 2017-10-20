@@ -17,7 +17,7 @@ set t_Co=256
 set autoread
 set ruler
 set cursorline
-set noerrorbells novisualbell t_vb=
+set noerrorbells vb t_vb=
 set showcmd
 set backspace=indent,eol,start
 set splitbelow
