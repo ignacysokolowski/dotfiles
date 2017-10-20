@@ -32,8 +32,29 @@ if not isinstance(other, self.__class__):
     return NotImplemented
 endsnippet
 
-snippet aeq "" b
+snippet ae "" b
 self.assertEqual(${1}, ${2})
+endsnippet
+
+snippet at "" b
+self.assertTrue(${1})
+endsnippet
+
+snippet af "" b
+self.assertFalse(${1})
+endsnippet
+
+snippet an "" b
+self.assertIsNone(${1})
+endsnippet
+
+snippet ann "" b
+self.assertIsNotNone(${1})
+endsnippet
+
+snippet setUp "" b
+def setUp(self) -> None:
+    ${1:pass}
 endsnippet
 
 snippet pytestsetup "" b
@@ -52,13 +73,75 @@ snippet abcm "" b
 @abc.abstractmethod
 endsnippet
 
-snippet assert_error "" b
+snippet aere "" b
+self.assertEqual(str(error.exception), '${1}')
+endsnippet
+
+snippet aerv "" b
 assert str(error.value) == '${1}'
 endsnippet
 
-snippet empty_init b
-def __init__(self) -> None:
-    ${1:pass}
+snippet im "import" b
+from ${1} import ${2}
+endsnippet
+
+snippet all "__all__" b
+__all__ = (
+	${1:${VISUAL:/from [\w.]+ import (\w+)/'$1',/g}}
+)
+endsnippet
+
+snippet cl "class" b
+class ${1:ClassName}:
+
+	${2:pass}
+endsnippet
+
+snippet init "__init__" b
+def __init__(self`!p snip.rv = ', ' if t[1] else ''`$1) -> None:
+	`!p
+if t[1]:
+		snip.rv = '\n        '.join([
+				'self._{0} = {0}'.format(arg.split(':')[0])
+				for arg in t[1].split(', ')
+		])
+else:
+		snip.rv = 'pass'
+`
+endsnippet
+
+snippet att "Attribute" b
+self._${1:${VISUAL}} = ${2:${VISUAL}}
+endsnippet
+
+snippet deff "function or method" b
+def ${1:name}(`!p snip.rv = vim.eval('indent(".") ? "self" : ""') + (', ' if t[2] else '')`$2) -> ${3:None}:
+	${4:${VISUAL:pass}}
+endsnippet
+
+snippet defc "class method" b
+@classmethod
+def ${1:name}(`!p
+if snip.indent:
+	snip.rv = 'cls' + (', ' if t[2] else '')`${2}) -> ${3:None}:
+	${4:${VISUAL:pass}}
+endsnippet
+
+snippet gt "getter method" b
+def $1(self) -> ${2}:
+	return self._$1
+endsnippet
+
+snippet tc "Type hint with []"
+${1}[${2:${VISUAL}}]
+endsnippet
+
+snippet Opt
+Optional[${1:${VISUAL}}]
+endsnippet
+
+snippet List
+List[${1:${VISUAL}}]
 endsnippet
 
 snippet Exc "" b
