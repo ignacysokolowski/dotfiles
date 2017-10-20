@@ -32,38 +32,8 @@ if not isinstance(other, self.__class__):
     return NotImplemented
 endsnippet
 
-snippet mypyini
-[mypy]
-ignore_missing_imports=1
-disallow_untyped_defs=1
-endsnippet
-
 snippet aeq
 self.assertEqual(${1}, ${2})
-endsnippet
-
-snippet pyenv
-deactivate-env () {
-  unalias test_ 2> /dev/null
-}
-
-alias test_='py.test --tb=short --continue-on-collection-errors'
-endsnippet
-
-snippet pygitignore
-# Python compiled files
-__pycache__
-*.pyc
-
-# Python packages
-*.egg-info
-dist
-build
-
-# Tests
-.cache
-.coverage
-htmlcov
 endsnippet
 
 snippet pytestsetup
