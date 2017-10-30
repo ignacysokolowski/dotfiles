@@ -123,11 +123,14 @@ let g:ale_linters.python = ['flake8', 'mypy', 'isort']
 let g:ale_python_flake8_executable = '/bin/sh -c "cd $(dirname %) && flake8"'
 let g:ale_python_flake8_args = "--ignore=E501"
 let g:ale_sign_column_always = 1
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
 let g:ale_sign_error = '•'
 let g:ale_sign_warning = '•'
 nmap <silent> [s <Plug>(ale_previous_wrap)
 nmap <silent> ]s <Plug>(ale_next_wrap)
 nmap <leader>; :lopen<CR>
+nmap <c-l> :ALELint<CR>
 
 Plug 'benmills/vimux'
 let g:VimuxRunnerType = "window"
