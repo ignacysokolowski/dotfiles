@@ -84,11 +84,6 @@ let g:indent_guides_guide_size = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=234 guibg=#1C1C1C
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234 guibg=#1C1C1C
 
-Plug 'yuttie/comfortable-motion.vim'
-let g:comfortable_motion_scroll_down_key = "j"
-let g:comfortable_motion_scroll_up_key = "k"
-let g:comfortable_motion_friction = 120
-
 Plug 'machakann/vim-highlightedyank'
 let g:highlightedyank_highlight_duration = 300
 map y <Plug>(highlightedyank)
