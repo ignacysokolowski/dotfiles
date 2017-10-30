@@ -167,7 +167,7 @@ nnoremap <leader>R "zyiw:bufdo %s/<C-r>z/<C-r>z/ge \| update<C-f>5b
 
 inoremap jj <Esc>
 
-vmap S :s/\((\\|{\\|\[\)/\0\r/g <bar> s/\()\\|}\\|]\)/,\r\0/g <bar> .-1s/, /,\r/ge<CR>
+let @s=':s/\((\|{\)/\0\r/g | s/\()\|}]\)/,\r\0/g | .-1s/, /,\r/ge=ii:redraw!'
 
 cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
