@@ -111,6 +111,7 @@ nmap <leader>l :CtrlPBufTag<CR>
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 let g:jedi#smart_auto_mappings = 0
 let g:jedi#usages_command = '<leader>u'
+autocmd FileType python setlocal completeopt-=preview
 
 Plug 'scrooloose/nerdtree'
 let NERDTreeIgnore=['__pycache__', '\~$']
