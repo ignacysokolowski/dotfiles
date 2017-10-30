@@ -156,6 +156,7 @@ noremap <silent> <leader>/ :noh<CR>
 noremap P P`[
 nnoremap gb :bn<CR>
 nnoremap gB :bp<CR>
+nnoremap ga :b#<CR>
 map <leader>a ggVG
 nnoremap S i<CR><Esc>
 map <c-h> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
