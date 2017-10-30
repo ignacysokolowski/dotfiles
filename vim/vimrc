@@ -122,6 +122,8 @@ let g:ale_linters = {}
 let g:ale_linters.python = ['flake8', 'mypy', 'isort']
 let g:ale_python_flake8_executable = '/bin/sh -c "cd $(dirname %) && flake8"'
 let g:ale_python_flake8_args = "--ignore=E501,I201"
+let g:ale_sign_error = '•'
+let g:ale_sign_warning = '•'
 nmap <silent> [s <Plug>(ale_previous_wrap)
 nmap <silent> ]s <Plug>(ale_next_wrap)
 nmap <leader>; :lopen<CR>
@@ -190,3 +192,5 @@ hi Directory guifg=#7587A6 ctermfg=blue
 hi NERDTreeExecFile guifg=#CF6A4C ctermfg=red
 hi TagBarScope guifg=#7587A6 ctermfg=blue
 hi Folded ctermbg=236 ctermfg=247 guibg=#292929 guifg=#999999
+hi SpellBad ctermbg=88 gui=undercurl guisp=Red
+hi Error ctermfg=9 ctermbg=none guifg=#FF0000 guibg=NONE
