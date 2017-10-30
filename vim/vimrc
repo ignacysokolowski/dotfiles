@@ -67,7 +67,7 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 nmap <leader>A :Ack! ""<c-f><Esc>hi
-map <leader>F :execute ":Ack! " . expand("<cword>")<CR>
+map <leader>F "zyiw:execute ":Ack! " . expand("<cword>")<CR>
 
 Plug 'fisadev/vim-isort'
 let g:vim_isort_map = '<C-i>'
@@ -163,7 +163,7 @@ map <c-h> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 nmap <leader>C :silent "!ctags -R ."<CR>
-nnoremap <leader>R "zyiw:bufdo %s/<C-r>z/<C-r>z/ge \| update<C-f>5b
+nnoremap <leader>R :cdo %s/<C-r>z/<C-r>z/ge \| update<C-f>5b
 
 inoremap jj <Esc>
 
