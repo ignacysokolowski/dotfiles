@@ -52,7 +52,6 @@ Plug 'ignacysokolowski/twilight256.vim'
 Plug 'ervandew/supertab'
 Plug 'vim-airline/vim-airline'
 Plug 'wellle/targets.vim'
-Plug 'airblade/vim-gitgutter'
 Plug 'Vimjas/vim-python-pep8-indent', {'for': 'python'}
 Plug 'jszakmeister/vim-togglecursor'  " change cursor shape when entering insert mode
 Plug 'endel/vim-github-colorscheme'
@@ -65,6 +64,10 @@ Plug 'bkad/CamelCaseMotion'
 Plug 'bling/vim-bufferline'
 let g:bufferline_echo = 0
 let g:bufferline_rotate = 1
+
+Plug 'airblade/vim-gitgutter'
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
 
 Plug 'mileszs/ack.vim'
 if executable('ag')
