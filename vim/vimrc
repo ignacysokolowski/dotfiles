@@ -24,6 +24,7 @@ set splitbelow
 set splitright
 set hidden
 set incsearch
+set hlsearch
 set timeoutlen=2000
 set lazyredraw
 set undofile undodir=~/.vim/undo
@@ -151,6 +152,7 @@ let g:python_highlight_all = 1
 
 nmap <leader>, :e ~/.vimrc<CR>
 noremap <silent> <leader>V :source ~/.vimrc<cr>
+noremap <silent> <leader>/ :noh<CR>
 noremap P P`[
 nnoremap gb :bn<CR>
 nnoremap gB :bp<CR>
