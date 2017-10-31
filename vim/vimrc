@@ -30,6 +30,7 @@ set lazyredraw
 set undofile undodir=~/.vim/undo
 set noswapfile
 set nostartofline
+set wildmenu
 set foldmethod=indent
 set foldlevelstart=20
 set foldopen-=block
