@@ -42,7 +42,11 @@ if has("gui_macvim")
   set transparency=10
   set blurradius=10
   set guioptions=
-  set guifont=DejaVu\ Sans\ Mono:h10
+  if system("osascript -e 'tell application \"Finder\" to get bounds of window of desktop' | cut -d ' ' -f 4") > 900
+    set guifont=DejaVu\ Sans\ Mono:h12
+  else
+    set guifont=DejaVu\ Sans\ Mono:h10
+  endif
 endif
 
 filetype plugin indent on
