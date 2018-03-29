@@ -207,3 +207,4 @@ hi TagBarScope guifg=#7587A6 ctermfg=blue
 hi Folded ctermbg=236 ctermfg=247 guibg=#292929 guifg=#999999
 hi SpellBad ctermbg=88 gui=undercurl guisp=Red
 hi Error ctermfg=9 ctermbg=none guifg=#FF0000 guibg=NONE
+hi Search ctermfg=0 ctermbg=14 guifg=Black guibg=#AAAA00
