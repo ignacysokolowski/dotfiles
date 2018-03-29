@@ -183,8 +183,6 @@ map <c-h> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 nmap <leader>C :silent "!ctags -R ."<CR>
 nnoremap <leader>R :cdo %s/<C-r>z/<C-r>z/ge \| update<C-f>5b
 
-inoremap jj <Esc>
-
 let @s=':s/\((\|{\)/\0\r/g | s/\()\|}]\)/,\r\0/g | .-1s/, /,\r/ge=ii:redraw!'
 
 cnoremap <C-j> <Down>
