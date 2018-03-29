@@ -66,10 +66,6 @@ Plug 'thanthese/Tortoise-Typing'
 Plug 'Valloric/YouCompleteMe'
 Plug 'bkad/CamelCaseMotion'
 
-Plug 'bling/vim-bufferline'
-let g:bufferline_echo = 0
-let g:bufferline_rotate = 1
-
 Plug 'airblade/vim-gitgutter'
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
