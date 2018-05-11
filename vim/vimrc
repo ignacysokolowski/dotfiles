@@ -65,6 +65,7 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'thanthese/Tortoise-Typing'
 Plug 'Valloric/YouCompleteMe'
 Plug 'bkad/CamelCaseMotion'
+Plug 'chr4/nginx.vim'
 
 Plug 'airblade/vim-gitgutter'
 let g:gitgutter_realtime = 0
