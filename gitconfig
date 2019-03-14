@@ -59,6 +59,8 @@
 [core]
   excludesfile = ~/.gitignore
   pager = less -S
+	autocrlf = input
+	editor = vim
 
 [push]
 	default = simple
