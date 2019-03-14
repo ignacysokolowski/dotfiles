@@ -34,9 +34,6 @@ set path+=**
 set foldmethod=indent
 set foldlevelstart=20
 set foldopen-=block
-if $TMUX==''
-  set clipboard=unnamed
-endif
 if has("gui_macvim")
   set transparency=10
   set blurradius=10
