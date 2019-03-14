@@ -55,7 +55,7 @@ workspace () {
 mkproject () {
   local OPTIND
   local name
-  local python_executable=python3.6
+  local python_executable=python3.7
   local github_url
 
   while getopts "p:g:" option; do
