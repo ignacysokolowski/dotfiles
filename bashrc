@@ -5,6 +5,8 @@
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace
 
+HISTIGNORE="tmux new*"
+
 # append to the history file, don't overwrite it
 shopt -s histappend
 
