@@ -4,6 +4,9 @@ setlocal shiftwidth=4
 setlocal colorcolumn=80,100
 setlocal foldnestmax=2
 
+" Create class
+let @c='yiw[[Oclass pa:pass2kw'
+
 " Create method
 nmap <buffer> gm yiwF.b<leader>d/^$<CR>odef <Esc>pA(self) -> None:<CR>pass<CR><Esc>k_
 
