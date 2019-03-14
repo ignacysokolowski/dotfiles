@@ -73,7 +73,7 @@ mkproject () {
 
   cd $HOME/workspace
   mkd $name
-  virtualenv env -p $python_executable
+  $python_executable -m venv env
   if [ $github_url ]; then
     git clone $github_url src && cd src
   else
