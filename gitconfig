@@ -30,7 +30,6 @@
   brm-fix = !git br -m $(git brc) $(git brc | sed 's!wip/!fix/!')
   brm-feature = !git br -m $(git brc) $(git brc | sed 's!wip/!feature/!')
   brm-refactoring = !git br -m $(git brc) $(git brc | sed 's!wip/!refactoring/!')
-  pl = pull --rebase
   ps = push
   psf = !git ps -f origin $(git brc)
   dc = diff --cached
@@ -65,3 +64,6 @@
 
 [push]
 	default = simple
+
+[pull]
+	rebase = true
