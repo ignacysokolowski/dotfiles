@@ -3,11 +3,14 @@ activate-env () {
 
   local project=`dirname $(pwd)`
   local envfile="$project/.env"
-  local envdir="$project/env$env_version"  # e.g. 'env2.7', 'env3.3'
   local src="$project/src"
+  local envdir="$project/env$env_version"  # e.g. 'env2.7', 'env3.3'
+  local venvdir="$src/venv"
   local app="$src/$(basename $project)"
 
-  if [ -d $envdir ]; then
+  if [ -d $venvdir ]; then
+    source "$venvdir/bin/activate"
+  elif [ -d $envdir ]; then
     source "$envdir/bin/activate"
   fi
 
