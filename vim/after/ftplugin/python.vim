@@ -12,3 +12,6 @@ nmap <buffer> gm yiwF.b<leader>d/^$<CR>odef <Esc>pA(self) -> None:<CR>pass<CR><E
 
 " Implement an abstract class and put it in the buffer
 let @i='y]]Pwywf)PdT(0v]]:g/abstractmethod/d?classwwiImpl0d]]'
+
+" Add getter for __init__ argument under cursor
+let @g='_"zy$}ko"zp>>Idef w"zywo	return self._"zpkF:s(self) ->$r:'
