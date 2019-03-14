@@ -63,6 +63,8 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'bkad/CamelCaseMotion'
 Plug 'chr4/nginx.vim'
 Plug 'leafgarland/typescript-vim'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'mgedmin/python-imports.vim'
 
 Plug 'airblade/vim-gitgutter'
 let g:gitgutter_realtime = 0
