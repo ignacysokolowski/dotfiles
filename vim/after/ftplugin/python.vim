@@ -4,6 +4,29 @@ setlocal shiftwidth=4
 setlocal colorcolumn=80,100
 setlocal foldnestmax=2
 
+function! GoToEndOfVarValue()
+  let nextIndentLine = NextIndentLine()
+  if (nextIndentLine == line('.') + 1)
+    let column = 0
+  else
+    let column = col('.') + 1
+  endif
+  exe nextIndentLine
+  exe 'normal ' column '|'
+endfunction
+
+function! NextIndentLine()
+  let line = line('.')
+  let lastline = line('$')
+  let indent = indent(line)
+  while (line <= lastline)
+    let line = line + 1
+    if (indent(line) == indent && strlen(getline(line)) > 0)
+      return line
+    endif
+  endwhile
+endfunction
+
 " Create class
 let @c='yiw[[Oclass pa:pass2kw'
 
@@ -23,7 +46,7 @@ let @g='_"zy$}ko"zp>>Idef w"zywo	return self._"zpkF:s(self) ->$r:'
 let @v='cvarOvar = p'
 
 " Inline variable
-let @n='#2W"zDddde"zP'
+let @n='#2W"zd:call GoToEndOfVarValue()ddNde"zP:noh'
 
 " Auto import
 nmap <silent> <leader>i :ImportName<CR>
