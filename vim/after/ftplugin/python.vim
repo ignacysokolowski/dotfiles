@@ -16,6 +16,9 @@ let @i='y]]Pwywf)PdT(0v]]:g/abstractmethod/d?classwwiImpl0d]]'
 " Add getter for __init__ argument under cursor
 let @g='_"zy$}ko"zp>>Idef w"zywo	return self._"zpkF:s(self) ->$r:'
 
+" Extract variable (the value needs to be visually selected)
+let @v='cvarOvar = p'
+
 " Auto import
 nmap <silent> <leader>i :ImportName<CR>
 
