@@ -8,7 +8,7 @@ setlocal foldnestmax=2
 let @c='yiw[[Oclass pa:pass2kw'
 
 " Create method
-nmap <buffer> gm yiwF.b<leader>d/^$<CR>odef <Esc>pA(self) -> None:<CR>pass<CR><Esc>k_:noh
+let @m='yiwF.b d/^$odef pA(self) -> None:passk_:noh'
 
 " Implement an abstract class and put it in the buffer
 let @i='y]]Pwywf)PdT(0v]]:g/abstractmethod/d?classwwiImpl0d]]'
