@@ -46,7 +46,7 @@ let @g='_"zy$}ko"zp>>Idef w"zywo	return self._"zpkF:s(self) ->$r:'
 let @v='cvarOvar = p'
 
 " Inline variable
-let @n='#2W"zd:call GoToEndOfVarValue()ddNde"zP:noh'
+let @n=' d2W"zd:call GoToEndOfVarValue()ddde"zP:noh'
 
 " Auto import
 nmap <silent> <leader>i :ImportName<CR>
