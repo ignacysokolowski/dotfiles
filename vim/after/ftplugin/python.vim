@@ -10,6 +10,9 @@ let @c='yiw[[Oclass pa:pass2kw'
 " Create method
 let @m='f("zyi(2byiwF.b d/^$odef pA(self, "zpa) -> None:V:s/, )/)/geopassk_:noh'
 
+" Extract method (the body needs to be visually selected)
+let @x='cself._extracted_method()F.b d/^$Odef _extracted_method(self) -> None:<<p:nohggVG:s/_extracted_method/'
+
 " Implement an abstract class and put it in the buffer
 let @i='y]]Pwywf)PdT(0v]]:g/abstractmethod/d?classwwiImpl0d]]'
 
