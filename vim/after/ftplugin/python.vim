@@ -48,6 +48,9 @@ let @v='cvarOvar = p'
 " Inline variable
 let @n=' d2W"zd:call GoToEndOfVarValue()ddde"zP:noh'
 
+" Add argument
+let @a='yw[mf)i, pa: '
+
 " Auto import
 nmap <silent> <leader>i :ImportName<CR>
 
