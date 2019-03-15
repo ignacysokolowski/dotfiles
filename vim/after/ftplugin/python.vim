@@ -23,7 +23,7 @@ let @g='_"zy$}ko"zp>>Idef w"zywo	return self._"zpkF:s(self) ->$r:'
 let @v='cvarOvar = p'
 
 " Inline variable
-let @n='gd2W"zDddde"zP'
+let @n='#2W"zDddde"zP'
 
 " Auto import
 nmap <silent> <leader>i :ImportName<CR>
