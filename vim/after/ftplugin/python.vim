@@ -19,6 +19,9 @@ let @g='_"zy$}ko"zp>>Idef w"zywo	return self._"zpkF:s(self) ->$r:'
 " Extract variable (the value needs to be visually selected)
 let @v='cvarOvar = p'
 
+" Inline variable
+let @n='gd2W"zDddde"zP'
+
 " Auto import
 nmap <silent> <leader>i :ImportName<CR>
 
