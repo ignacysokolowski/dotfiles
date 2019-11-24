@@ -20,20 +20,12 @@
   untracked = cyan
 
 [alias]
-  st = status
   s = status -sb
-  ci = commit
-  ca = commit --amend
   co = checkout
   br = branch
   brc = !git branch | grep '*' | sed 's!* !!'
-  brm-fix = !git br -m $(git brc) $(git brc | sed 's!wip/!fix/!')
-  brm-feature = !git br -m $(git brc) $(git brc | sed 's!wip/!feature/!')
-  brm-refactoring = !git br -m $(git brc) $(git brc | sed 's!wip/!refactoring/!')
   dc = diff --cached
   dcm = diff --cached -M -C -D
-  dm = diff -M -C -D
-  rh = reset --hard
   r = rebase
   ri = rebase --interactive --autosquash
   rs = rebase --skip
@@ -48,13 +40,6 @@
   mylog = log --pretty=format:'%C(yellow)%h %Cred%ai %Creset%s' --author=Ignacy --no-merges
   la = log --pretty=format:'%Cgreen%an: %Creset%s'
   sh = show -p --stat
-
-  ff = flow feature
-  ffs = flow feature start
-  ffp = flow feature publish
-  fff = flow feature finish
-  fhs = flow hotfix start
-  fhf = flow hotfix finish
 
 [core]
   excludesfile = ~/.gitignore
