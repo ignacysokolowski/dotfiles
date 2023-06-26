@@ -33,9 +33,9 @@
   ra = rebase --abort
   fixup = !sh -c 'git commit --fixup=HEAD && git rebase --interactive --autosquash HEAD~2'
   fixup-commit = commit --fixup=HEAD
-  l = log --pretty=format:'%C(yellow)%h %Cred%ai %Cgreen%an %Creset%s'
+  l = log --pretty=format:'%C(yellow)%h %Cred%ai %Cgreen%an %Creset%s %C(yellow bold)%d'
   lm = log --pretty=format:'%C(yellow)%h %Cred%ai %Creset%s %Cgreen%an'
-  lg = log --graph --pretty=format:'%C(yellow)%h %Cred%ai %Cgreen%an %C(yellow bold)%d %Creset%s'
+  lg = log --graph --pretty=format:'%C(yellow)%h %Cred%ai %Cgreen%an %Creset%s %C(yellow bold)%d'
   glog = log --graph --decorate --pretty=oneline --abbrev-commit --all
   mylog = log --pretty=format:'%C(yellow)%h %Cred%ai %Creset%s' --author=Ignacy --no-merges
   la = log --pretty=format:'%Cgreen%an: %Creset%s'
