@@ -67,6 +67,7 @@ Plug 'chr4/nginx.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mgedmin/python-imports.vim'
+Plug 'udalov/kotlin-vim'
 
 Plug 'airblade/vim-gitgutter'
 let g:gitgutter_realtime = 0
