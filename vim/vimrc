@@ -4,6 +4,8 @@ augroup vimrc
   au!
 augroup END
 
+set spell spelllang=en_us
+set spellcapcheck=
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -208,3 +210,5 @@ hi Folded ctermbg=236 ctermfg=247 guibg=#292929 guifg=#999999
 hi SpellBad ctermbg=88 gui=undercurl guisp=Red
 hi Error ctermfg=9 ctermbg=none guifg=#FF0000 guibg=NONE
 hi Search ctermfg=0 ctermbg=14 guifg=Black guibg=#AAAA00
+
+hi SpellLocal ctermfg=none ctermbg=none gui=undercurl guisp=Cyan

@@ -4,3 +4,4 @@ vim/init.vim
 vim/plugged
 vim/sessions
 vim/undo
+vim/spell
