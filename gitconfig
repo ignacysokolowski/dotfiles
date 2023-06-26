@@ -57,3 +57,5 @@
 	ff = false
 [init]
 	defaultBranch = trunk
+[commit]
+	gpgsign = true
