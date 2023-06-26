@@ -23,7 +23,7 @@
   s = status -sb
   co = checkout
   br = branch
-  brc = !git branch | grep '*' | sed 's!* !!'
+  brc = branch --show-current
   dc = diff --cached
   dcm = diff --cached -M -C -D
   r = rebase
