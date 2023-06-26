@@ -211,4 +211,7 @@ hi SpellBad ctermbg=88 gui=undercurl guisp=Red
 hi Error ctermfg=9 ctermbg=none guifg=#FF0000 guibg=NONE
 hi Search ctermfg=0 ctermbg=14 guifg=Black guibg=#AAAA00
 
+hi DiffAdded ctermfg=107 guifg=#8F9D6A
+hi DiffRemoved ctermfg=167 guifg=#CF6A4C
+
 hi SpellLocal ctermfg=none ctermbg=none gui=undercurl guisp=Cyan
