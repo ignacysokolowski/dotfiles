@@ -8,9 +8,12 @@ bash_prompt() {
   local RED_BG="\[\033[0;7;31m\]"
   local PINK="\[\033[0;35m\]"
   local CYAN="\[\033[0;36m\]"
+  local BLUE="\[\033[0;34m\]"
 
   local now=`date +%H:%M:%S`
   local git_status=`git status -sb 2> /dev/null`
+  local git_revision=`git rev-parse --short HEAD 2> /dev/null`
+  local git_last_commit=$(git log -1 --pretty='format:%C(auto)%s (%ad)' --date=format:'%a %Y-%m-%d %H:%M:%S' 2> /dev/null)
 
   if [ "x$git_status" != x ]; then
     local branch=`echo "$git_status" | grep '##' | sed 's!## !!' | sed 's!\.\.\..*!!'`
@@ -22,7 +25,7 @@ bash_prompt() {
       branch="${RED_BG}MASTER${PS_CLEAR}"
     fi
 
-    local GIT_STATUS=" ${RED}[$branch ${PINK}$staged ${GREEN}$modified ${CYAN}$untracked${RED}]"
+    local GIT_STATUS=" ${RED}[$branch ${BLUE}${git_revision} ${PINK}$staged ${GREEN}$modified ${CYAN}$untracked${RED}] ${DARK_GRAY}${git_last_commit}"
   fi
 
   if [ x$VIRTUAL_ENV != x ]; then
@@ -31,8 +34,9 @@ bash_prompt() {
     local IN_VIRTUALENV="($env_name)"
   fi
 
-  PS1="${DARK_GRAY}$now${PS_CLEAR} $IN_VIRTUALENV${ORANGE}\u${GRAY}@${ORANGE}\h${GRAY}:${GREEN}\w$GIT_STATUS${PS_CLEAR}\n${ORANGE}\$${PS_CLEAR} "
-  PS1="${DARK_GRAY}$now${PS_CLEAR} $IN_VIRTUALENV ${GREEN}\w$GIT_STATUS${PS_CLEAR}\n${ORANGE}\$${PS_CLEAR} "
+  shopt -u promptvars
+  PS1="${DARK_GRAY}$now${PS_CLEAR} $IN_VIRTUALENV${ORANGE}\u${GRAY}@${ORANGE}\h${GRAY}:${GREEN}\w${GIT_STATUS}${PS_CLEAR}\n${ORANGE}\$${PS_CLEAR} "
+  PS1="${DARK_GRAY}$now${PS_CLEAR} $IN_VIRTUALENV ${GREEN}\w${GIT_STATUS}${PS_CLEAR}\n${ORANGE}\$${PS_CLEAR} "
 }
 
 PROMPT_COMMAND=bash_prompt
