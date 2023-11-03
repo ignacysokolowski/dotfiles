@@ -5,6 +5,10 @@
 [color]
   ui = auto
 
+[tig]
+  main-view-date-display = custom
+  main-view-date-format = "%F %H:%M:%S %z"
+
 [tig "color"]
   cursor = black green
 
