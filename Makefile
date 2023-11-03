@@ -1,4 +1,4 @@
-install: install-vim install-konsole install-dotfiles
+install: install-vim install-konsole install-karabiner install-dotfiles
 
 install-vim:
 	rm -rf ~/.vim ~/.vimrc
@@ -9,6 +9,10 @@ install-konsole:
 	rm -rf ~/.kde/share/apps/konsole/ignacy.colorscheme ~/.kde/share/apps/konsole/Default.profile
 	ln -s `pwd`/konsole/ignacy.colorscheme ~/.kde/share/apps/konsole/ignacy.colorscheme
 	ln -s `pwd`/konsole/Default.profile ~/.kde/share/apps/konsole/Default.profile
+
+install-karabiner:
+	rm -rf ~/.config/karabiner
+	ln -s `pwd`/karabiner ~/.config/karabiner
 
 install-dotfiles:
 	rm -rf ~/.bashrc ~/.bash ~/.bash_aliases ~/.bash_completion ~/.inputrc ~/.gitconfig ~/.htoprc ~/.tmux.conf ~/.ideavimrc
