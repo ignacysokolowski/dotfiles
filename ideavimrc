@@ -1,0 +1,7 @@
+set visualbell
+set surround
+set highlightedyank
+set argtextobj
+set exchange
+set textobj-indent
+map ge :action GotoNextError<CR>
