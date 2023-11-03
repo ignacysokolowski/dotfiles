@@ -1,4 +1,5 @@
 bash_prompt() {
+  local LAST_COMMAND_STATUS_CODE=$?
   local PS_CLEAR="\[\033[0;00m\]"
   local ORANGE="\[\033[0;33m\]"
   local GRAY="\[\033[0;37m\]"
@@ -34,9 +35,15 @@ bash_prompt() {
     local IN_VIRTUALENV="($env_name)"
   fi
 
+  if [ "$LAST_COMMAND_STATUS_CODE" -eq "0" ]; then
+    local LAST_COMMAND_STATUS="${GREEN}${LAST_COMMAND_STATUS_CODE}${PS_CLEAR}"
+  else
+    local LAST_COMMAND_STATUS="${RED}${LAST_COMMAND_STATUS_CODE}${PS_CLEAR}"
+  fi
+
   shopt -u promptvars
   PS1="${DARK_GRAY}$now${PS_CLEAR} $IN_VIRTUALENV${ORANGE}\u${GRAY}@${ORANGE}\h${GRAY}:${GREEN}\w${GIT_STATUS}${PS_CLEAR}\n${ORANGE}\$${PS_CLEAR} "
-  PS1="${DARK_GRAY}$now${PS_CLEAR} $IN_VIRTUALENV ${GREEN}\w${GIT_STATUS}${PS_CLEAR}\n${ORANGE}\$${PS_CLEAR} "
+  PS1="${DARK_GRAY}$now${PS_CLEAR} $IN_VIRTUALENV ${GREEN}\w${GIT_STATUS} ${LAST_COMMAND_STATUS}${PS_CLEAR}\n${ORANGE}\$${PS_CLEAR} "
 }
 
 PROMPT_COMMAND=bash_prompt
