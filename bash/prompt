@@ -11,15 +11,15 @@ bash_prompt() {
   local BLUE="\[\033[0;34m\]"
 
   local now=`date +%H:%M:%S`
-  local git_status=`git status -sb 2> /dev/null`
-  local git_revision=`git rev-parse --short HEAD 2> /dev/null`
-  local git_last_commit=$(git log -1 --pretty='format:%C(auto)%s (%ad)' --date=format:'%a %Y-%m-%d %H:%M:%S' 2> /dev/null)
+  local git_status=$(git status --porcelain=v2 -b 2> /dev/null)
 
   if [ "x$git_status" != x ]; then
-    local branch=`echo "$git_status" | grep '##' | sed 's!## !!' | sed 's!\.\.\..*!!'`
-    local modified=`echo "$git_status" | grep ' M ' | wc -l | xargs`
-    local untracked=`echo "$git_status" | grep '?? ' | wc -l | xargs`
-    local staged=`echo "$git_status" | grep 'M  \|A ' | wc -l | xargs`
+    local git_last_commit=$(git log -1 --pretty='format:%C(auto)%s (%ad)' --date=format:'%a %Y-%m-%d %H:%M:%S' 2> /dev/null)
+    local git_revision=$(echo "$git_status" | grep "branch.oid" | cut -d" " -f3 | cut -c 1-8)
+    local branch=$(echo "$git_status" | grep 'branch.head' | cut -d" " -f3)
+    local modified=$(echo "$git_status" | grep "^1 .M" | wc -l | xargs)
+    local untracked=$(echo "$git_status" | grep "^? " | wc -l | xargs)
+    local staged=$(echo "$git_status" | grep "^1 M.\|^1 A.\|^2 R." | wc -l | xargs)
 
     if [ "$branch" == 'master' ]; then
       branch="${RED_BG}MASTER${PS_CLEAR}"
