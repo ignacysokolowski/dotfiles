@@ -8,6 +8,8 @@
 [tig]
   main-view-date-display = custom
   main-view-date-format = "%F %H:%M:%S %z"
+  main-view-id = true
+  main-view-id-width = 8
 
 [tig "color"]
   cursor = black green
